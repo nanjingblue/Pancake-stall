@@ -16,13 +16,16 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    loginwindow.cpp \
     main.cpp \
     welcomewidget.cpp
 
 HEADERS += \
+    loginwindow.h \
     welcomewidget.h
 
 FORMS += \
+    loginwindow.ui \
     welcomewidget.ui
 
 # Default rules for deployment.
