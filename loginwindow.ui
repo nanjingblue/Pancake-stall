@@ -285,32 +285,9 @@ font: 36pt &quot;宋体&quot;;</string>
             <number>0</number>
            </property>
            <layout class="QGridLayout" name="gridLayout">
-            <property name="leftMargin">
-             <number>9</number>
-            </property>
-            <property name="topMargin">
-             <number>9</number>
-            </property>
-            <property name="rightMargin">
-             <number>15</number>
-            </property>
             <property name="bottomMargin">
-             <number>9</number>
+             <number>0</number>
             </property>
-            <property name="horizontalSpacing">
-             <number>9</number>
-            </property>
-            <item row="1" column="0">
-             <widget class="QLabel" name="pwdLabel">
-              <property name="styleSheet">
-               <string notr="true">color: rgb(92, 80, 80);
-font: 24pt &quot;宋体&quot;;</string>
-              </property>
-              <property name="text">
-               <string>密码：</string>
-              </property>
-             </widget>
-            </item>
             <item row="0" column="0">
              <widget class="QLabel" name="userLabel">
               <property name="styleSheet">
@@ -322,7 +299,7 @@ font: 24pt &quot;宋体&quot;;</string>
               </property>
              </widget>
             </item>
-            <item row="0" column="1" colspan="2">
+            <item row="0" column="1">
              <widget class="QLineEdit" name="userEdit">
               <property name="styleSheet">
                <string notr="true">color: rgb(92, 80, 80);
@@ -336,7 +313,18 @@ font: 30pt &quot;Comic Sans MS&quot;;</string>
               </property>
              </widget>
             </item>
-            <item row="1" column="1" colspan="2">
+            <item row="1" column="0">
+             <widget class="QLabel" name="pwdLabel">
+              <property name="styleSheet">
+               <string notr="true">color: rgb(92, 80, 80);
+font: 24pt &quot;宋体&quot;;</string>
+              </property>
+              <property name="text">
+               <string>密码：</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="1">
              <widget class="QLineEdit" name="pwdEdit">
               <property name="styleSheet">
                <string notr="true">color: rgb(92, 80, 80);
@@ -350,6 +338,26 @@ font: 30pt &quot;Comic Sans MS&quot;;</string>
               </property>
               <property name="alignment">
                <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="0" colspan="2">
+             <widget class="QLabel" name="messageLabel">
+              <property name="maximumSize">
+               <size>
+                <width>16777215</width>
+                <height>30</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">color: rgb(92, 80, 80);
+font: 14pt &quot;宋体&quot;;</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
               </property>
              </widget>
             </item>

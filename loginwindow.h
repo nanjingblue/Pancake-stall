@@ -2,6 +2,7 @@
 #define LOGINWINDOW_H
 
 #include <QWidget>
+#include <QLabel>
 #include "database.h"
 
 namespace Ui {
@@ -20,9 +21,12 @@ private slots:
 
     void on_btnRegister_clicked();
 
+    void on_btnLoginer_clicked();
+
 private:
     Ui::LoginWindow *ui;
     Database * database;
+    QLabel * message;
 };
 
 #endif // LOGINWINDOW_H

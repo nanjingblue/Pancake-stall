@@ -10,6 +10,7 @@ LoginWindow::LoginWindow(QWidget *parent) :
     this->setWindowFlags(Qt::FramelessWindowHint);
     // 初始化数据库
     this->database = new Database;
+    this->message = ui->messageLabel;
 }
 
 LoginWindow::~LoginWindow()
@@ -34,4 +35,16 @@ void LoginWindow::on_btnRegister_clicked()
     } else {
         QMessageBox::information(this, "Register", "User registration successful");
     }
+}
+
+void LoginWindow::on_btnLoginer_clicked()
+{
+    QString username = ui->userEdit->text();
+    QString password = ui->pwdEdit->text();
+    if(username == "") {
+        this->message->setText("Username can't be empty");
+    } else if(password == "") {
+        this->message->setText("Password can't be empty");
+    }
+
 }

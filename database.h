@@ -9,7 +9,8 @@ class Database : public QObject
 public:
     explicit Database(QObject *parent = nullptr);
     void initUserInfoTable();
-    int addUser(QString, QString);
+    int addUser(QString username, QString password);
+    bool isUserExist(QString username, QString password);
 
 signals:
 
