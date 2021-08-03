@@ -1,6 +1,7 @@
 #ifndef WELCOMEWIDGET_H
 #define WELCOMEWIDGET_H
 
+#include "loginwindow.h"
 #include <QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -20,8 +21,12 @@ public:
     void mouseReleaseEvent(QMouseEvent *event) override;
 
 
+private slots:
+    void on_pushButton_clicked();
+
 private:
     Ui::welcomeWidget *ui;
     QPoint movePos;
+    LoginWindow *login;
 };
 #endif // WELCOMEWIDGET_H

@@ -40,3 +40,10 @@ void welcomeWidget::mouseReleaseEvent(QMouseEvent *event)
     this->movePos = QPoint();
 }
 
+
+void welcomeWidget::on_pushButton_clicked()
+{
+    this->login = new LoginWindow;
+    this->hide();
+    this->login->show();
+}
