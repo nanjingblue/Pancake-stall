@@ -45,6 +45,11 @@ void LoginWindow::on_btnLoginer_clicked()
         this->message->setText("Username can't be empty");
     } else if(password == "") {
         this->message->setText("Password can't be empty");
+    } else {
+        if(this->database->isUserExist(username, password)) {
+            this->message->setText("Logining");
+        } else {
+            this->message->setText("User does not exist please register");
+        }
     }
-
 }

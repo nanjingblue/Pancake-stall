@@ -57,7 +57,7 @@ bool Database::isUserExist(QString username, QString password)
 {
     QSqlTableModel *model = new QSqlTableModel;
     model->setTable("userinfo");
-    model->setFilter(QString("username='%1',password='%2'").arg(username).arg(password));
+    model->setFilter(QString("username='%1' and password='%2'").arg(username).arg(password));
     model->select();
     if(model->rowCount() > 0) {
         qDebug() << "当前用户存在";
