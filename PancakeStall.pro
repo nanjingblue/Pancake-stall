@@ -17,12 +17,14 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     database.cpp \
+    frametitlebar.cpp \
     loginwindow.cpp \
     main.cpp \
     welcomewidget.cpp
 
 HEADERS += \
     database.h \
+    frametitlebar.h \
     loginwindow.h \
     welcomewidget.h
 

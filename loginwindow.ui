@@ -30,7 +30,7 @@
     <number>0</number>
    </property>
    <item>
-    <widget class="QFrame" name="titleBar">
+    <widget class="FrameTitleBar" name="titleBar">
      <property name="minimumSize">
       <size>
        <width>0</width>
@@ -481,6 +481,14 @@ font: 24pt &quot;宋体&quot;;</string>
    </item>
   </layout>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>FrameTitleBar</class>
+   <extends>QFrame</extends>
+   <header location="global">frametitlebar.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections>
   <connection>
