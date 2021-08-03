@@ -8,6 +8,7 @@ LoginWindow::LoginWindow(QWidget *parent) :
 {
     ui->setupUi(this);
     this->setWindowFlags(Qt::FramelessWindowHint);
+    this->setMinimumSize(1164, 729);
     // 初始化数据库
     this->database = new Database;
     this->message = ui->messageLabel;

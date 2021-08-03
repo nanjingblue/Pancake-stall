@@ -10,6 +10,12 @@
     <height>729</height>
    </rect>
   </property>
+  <property name="minimumSize">
+   <size>
+    <width>1164</width>
+    <height>729</height>
+   </size>
+  </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
@@ -113,7 +119,7 @@ font: 75 14pt &quot;Comic Sans MS&quot;;</string>
        <widget class="QFrame" name="btnBar">
         <property name="minimumSize">
          <size>
-          <width>120</width>
+          <width>130</width>
           <height>0</height>
          </size>
         </property>
@@ -123,19 +129,110 @@ font: 75 14pt &quot;Comic Sans MS&quot;;</string>
         <property name="frameShadow">
          <enum>QFrame::Raised</enum>
         </property>
-        <widget class="QPushButton" name="pushButton">
-         <property name="geometry">
-          <rect>
-           <x>50</x>
-           <y>0</y>
-           <width>41</width>
-           <height>24</height>
-          </rect>
+        <layout class="QHBoxLayout" name="horizontalLayout_6">
+         <property name="spacing">
+          <number>0</number>
          </property>
-         <property name="text">
-          <string>X</string>
+         <property name="leftMargin">
+          <number>0</number>
          </property>
-        </widget>
+         <property name="topMargin">
+          <number>0</number>
+         </property>
+         <property name="rightMargin">
+          <number>0</number>
+         </property>
+         <property name="bottomMargin">
+          <number>0</number>
+         </property>
+         <item>
+          <widget class="QPushButton" name="btnMini">
+           <property name="minimumSize">
+            <size>
+             <width>20</width>
+             <height>20</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>20</width>
+             <height>20</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QPushButton{
+	background-color: rgb(181, 234, 234);
+	border: none;
+	border-radius: 10px;
+}
+QPushButton:hover {
+	background-color: rgb(181, 234, 234,150);
+}</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="btnMax">
+           <property name="minimumSize">
+            <size>
+             <width>20</width>
+             <height>20</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>20</width>
+             <height>20</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QPushButton{
+	background-color: rgb(255, 199, 101);
+	border: none;
+	border-radius: 10px;
+}
+QPushButton:hover {
+	background-color: rgb(255, 199, 101,150);
+}</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="btnClose">
+           <property name="minimumSize">
+            <size>
+             <width>20</width>
+             <height>20</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>20</width>
+             <height>20</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QPushButton{
+	background-color: rgb(243, 139, 160);
+	border: none;
+	border-radius: 10px;
+}
+QPushButton:hover {
+	background-color: rgb(243, 139, 160,150);
+}</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+        </layout>
        </widget>
       </item>
      </layout>
@@ -201,7 +298,7 @@ font: 75 14pt &quot;Comic Sans MS&quot;;</string>
         <property name="lineWidth">
          <number>0</number>
         </property>
-        <layout class="QVBoxLayout" name="verticalLayout_2" stretch="2,5,3">
+        <layout class="QVBoxLayout" name="verticalLayout_2" stretch="0,5,3">
          <property name="spacing">
           <number>0</number>
          </property>
@@ -252,6 +349,12 @@ font: 75 14pt &quot;Comic Sans MS&quot;;</string>
             </property>
             <item>
              <widget class="QLabel" name="label_3">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>100</height>
+               </size>
+              </property>
               <property name="styleSheet">
                <string notr="true">color: rgb(92, 80, 80);
 font: 36pt &quot;宋体&quot;;</string>
@@ -350,11 +453,11 @@ font: 30pt &quot;Comic Sans MS&quot;;</string>
                </size>
               </property>
               <property name="styleSheet">
-               <string notr="true">color: rgb(92, 80, 80);
-font: 14pt &quot;宋体&quot;;</string>
+               <string notr="true">color: rgb(241, 167, 157);
+font: 75 14pt &quot;Comic Sans MS&quot;;</string>
               </property>
               <property name="text">
-               <string/>
+               <string>Please enter your username and password</string>
               </property>
               <property name="alignment">
                <set>Qt::AlignCenter</set>
@@ -492,18 +595,66 @@ font: 24pt &quot;宋体&quot;;</string>
  <resources/>
  <connections>
   <connection>
-   <sender>pushButton</sender>
+   <sender>btnMini</sender>
    <signal>clicked()</signal>
    <receiver>LoginWindow</receiver>
    <slot>close()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>1116</x>
-     <y>14</y>
+     <x>1054</x>
+     <y>21</y>
     </hint>
     <hint type="destinationlabel">
      <x>1121</x>
-     <y>-30</y>
+     <y>0</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btnMax</sender>
+   <signal>clicked()</signal>
+   <receiver>LoginWindow</receiver>
+   <slot>showMaximized()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1080</x>
+     <y>11</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1080</x>
+     <y>-60</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btnClose</sender>
+   <signal>clicked()</signal>
+   <receiver>LoginWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1110</x>
+     <y>18</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1106</x>
+     <y>-46</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btnMini</sender>
+   <signal>clicked()</signal>
+   <receiver>LoginWindow</receiver>
+   <slot>showMinimized()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1042</x>
+     <y>12</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1038</x>
+     <y>-42</y>
     </hint>
    </hints>
   </connection>
