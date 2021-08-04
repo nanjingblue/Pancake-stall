@@ -2,8 +2,8 @@
  <author/>
  <comment/>
  <exportmacro/>
- <class>CustomerWidget</class>
- <widget name="CustomerWidget" class="QWidget">
+ <class>goBuyWidget</class>
+ <widget name="goBuyWidget" class="QWidget">
   <property name="geometry">
    <rect>
     <x>0</x>

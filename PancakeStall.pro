@@ -18,26 +18,32 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
     bossform.cpp \
     customerform.cpp \
-    customerwidget.cpp \
     database.cpp \
     frametitlebar.cpp \
+    gobuywidget.cpp \
     loginwindow.cpp \
     main.cpp \
+    qboss.cpp \
+    qcustomer.cpp \
+    qperson.cpp \
     welcomewidget.cpp
 
 HEADERS += \
     bossform.h \
     customerform.h \
-    customerwidget.h \
     database.h \
     frametitlebar.h \
+    gobuywidget.h \
     loginwindow.h \
+    qboss.h \
+    qcustomer.h \
+    qperson.h \
     welcomewidget.h
 
 FORMS += \
     bossform.ui \
     customerform.ui \
-    customerwidget.ui \
+    gobuywidget.ui \
     loginwindow.ui \
     welcomewidget.ui
 
