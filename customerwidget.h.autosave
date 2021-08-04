@@ -1,0 +1,30 @@
+#ifndef CUSTOMERWIDGET_H
+#define CUSTOMERWIDGET_H
+
+#include <QWidget>
+
+namespace Ui {
+class CustomerWidget;
+}
+
+class CustomerWidget : public QWidget
+{
+    Q_OBJECT
+
+public:
+    explicit CustomerWidget(QWidget *parent = nullptr);
+    ~CustomerWidget();
+    
+signals:
+    void addSpices();
+    void addIngredients();
+    
+public slots:
+    void addMoney();
+    
+private:
+    Ui::CustomerWidget *ui;
+    int money;
+};
+
+#endif // CUSTOMERWIDGET_H

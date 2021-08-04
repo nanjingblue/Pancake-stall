@@ -17,6 +17,8 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     bossform.cpp \
+    customerform.cpp \
+    customerwidget.cpp \
     database.cpp \
     frametitlebar.cpp \
     loginwindow.cpp \
@@ -25,6 +27,8 @@ SOURCES += \
 
 HEADERS += \
     bossform.h \
+    customerform.h \
+    customerwidget.h \
     database.h \
     frametitlebar.h \
     loginwindow.h \
@@ -32,6 +36,8 @@ HEADERS += \
 
 FORMS += \
     bossform.ui \
+    customerform.ui \
+    customerwidget.ui \
     loginwindow.ui \
     welcomewidget.ui
 
