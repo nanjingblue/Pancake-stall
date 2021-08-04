@@ -19,6 +19,9 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">#LoginWindow{border-radius: 8px;}</string>
+  </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <property name="spacing">
     <number>0</number>
@@ -246,7 +249,7 @@ QPushButton:hover {
      <property name="frameShadow">
       <enum>QFrame::Raised</enum>
      </property>
-     <layout class="QHBoxLayout" name="horizontalLayout">
+     <layout class="QHBoxLayout" name="horizontalLayout" stretch="1335,1000">
       <property name="spacing">
        <number>0</number>
       </property>
@@ -282,7 +285,7 @@ QPushButton:hover {
        <widget class="QFrame" name="frame_2">
         <property name="maximumSize">
          <size>
-          <width>500</width>
+          <width>16777215</width>
           <height>16777215</height>
          </size>
         </property>

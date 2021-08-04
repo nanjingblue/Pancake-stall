@@ -16,6 +16,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    bossform.cpp \
     database.cpp \
     frametitlebar.cpp \
     loginwindow.cpp \
@@ -23,12 +24,14 @@ SOURCES += \
     welcomewidget.cpp
 
 HEADERS += \
+    bossform.h \
     database.h \
     frametitlebar.h \
     loginwindow.h \
     welcomewidget.h
 
 FORMS += \
+    bossform.ui \
     loginwindow.ui \
     welcomewidget.ui
 
