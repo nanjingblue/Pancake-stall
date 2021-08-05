@@ -4,7 +4,7 @@
 #include <QWidget>
 #include <QLabel>
 #include "database.h"
-#include "gobuywidget.h"
+#include "customerform.h"
 
 namespace Ui {
 class LoginWindow;
@@ -28,7 +28,7 @@ private:
     Ui::LoginWindow *ui;
     Database * database;
     QLabel * message;
-    goBuyWidget *buy;
+    CustomerForm * customer;
 };
 
 #endif // LOGINWINDOW_H

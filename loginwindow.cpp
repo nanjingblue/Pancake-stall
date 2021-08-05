@@ -1,5 +1,6 @@
 #include "loginwindow.h"
 #include "ui_loginwindow.h"
+#include "global.h"
 #include <QMessageBox>
 
 LoginWindow::LoginWindow(QWidget *parent) :
@@ -49,10 +50,17 @@ void LoginWindow::on_btnLoginer_clicked()
     } else {
         if(this->database->isUserExist(username, password)) {
             this->message->setText("Logining");
-            this->buy = new goBuyWidget;
-            if(username == "admin") buy->isAdmin = true;
+            // 设置当前用户 使用全局变量
+            if(username == "admin") Global::isAdmin = true;
+            else Global::isAdmin = false;
+
+            Global::username = username;
+            Global::password = password;
+
+            this->customer = new CustomerForm;
             this->hide();
-            buy->show();
+            customer->show();
+
         } else {
             this->message->setText("User does not exist please register");
         }

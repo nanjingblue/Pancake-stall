@@ -16,12 +16,14 @@ public:
     explicit goBuyWidget(QWidget *parent = nullptr);
     ~goBuyWidget();
     void initCheckBoxProp();
-
+    void initCheckBoxConn();
 signals:
-    void checkBoxPick();
+    void checkBoxPicked();
 
 public slots:
-    int userType(QString username);
+    void onCheckBoxPicked();
+    void onCostChanged();
+
 
 private:
     Ui::goBuyWidget *ui;

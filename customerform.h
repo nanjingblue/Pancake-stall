@@ -1,6 +1,7 @@
 #ifndef CUSTOMERFORM_H
 #define CUSTOMERFORM_H
 
+#include "gobuywidget.h"
 #include <QWidget>
 
 namespace Ui {
@@ -17,6 +18,7 @@ public:
 
 private:
     Ui::CustomerForm *ui;
+    goBuyWidget * goBuyPage;
 };
 
 #endif // CUSTOMERFORM_H

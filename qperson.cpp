@@ -13,6 +13,6 @@ int QPerson::cost()
 
 void QPerson::setCost(int value)
 {
-    this->m_cost = value;
-    emit(this->costChanged(value));
+    this->m_cost += value;
+    emit(this->costChanged(m_cost));
 }

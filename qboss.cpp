@@ -1,6 +1,7 @@
 #include "qboss.h"
 
-QBoss::QBoss(QObject *parent) : QObject(parent)
+QBoss::QBoss(QString username, QString password, QPerson *parent)
+    : QPerson(username, password, parent)
 {
 
 }

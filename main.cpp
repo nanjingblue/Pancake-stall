@@ -1,7 +1,4 @@
 #include "welcomewidget.h"
-#include "loginwindow.h"
-#include "bossform.h"
-
 #include <QApplication>
 
 int main(int argc, char *argv[])

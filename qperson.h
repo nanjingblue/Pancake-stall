@@ -18,7 +18,7 @@ signals:
 protected:
     QString username;
     QString password;
-    int m_cost;
+    int m_cost = 0;
 };
 
 #endif // QPERSON_H

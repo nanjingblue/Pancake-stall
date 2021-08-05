@@ -8,6 +8,9 @@ class Global : public QObject
     Q_OBJECT
 public:
     explicit Global(QObject *parent = nullptr);
+    static bool isAdmin;
+    static QString username;
+    static QString password;
 
 signals:
 
