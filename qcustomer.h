@@ -1,15 +1,18 @@
 #ifndef QCUSTOMER_H
 #define QCUSTOMER_H
 
+#include "qperson.h"
 #include <QObject>
 
-class QCustomer : public QObject
+class QCustomer :public QPerson
 {
     Q_OBJECT
 public:
-    explicit QCustomer(QObject *parent = nullptr);
+    explicit QCustomer(QString username, QString password, QPerson *parent = nullptr);
 
 signals:
+
+private:
 
 };
 

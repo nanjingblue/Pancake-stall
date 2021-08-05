@@ -20,6 +20,7 @@ SOURCES += \
     customerform.cpp \
     database.cpp \
     frametitlebar.cpp \
+    global.cpp \
     gobuywidget.cpp \
     loginwindow.cpp \
     main.cpp \
@@ -33,6 +34,7 @@ HEADERS += \
     customerform.h \
     database.h \
     frametitlebar.h \
+    global.h \
     gobuywidget.h \
     loginwindow.h \
     qboss.h \

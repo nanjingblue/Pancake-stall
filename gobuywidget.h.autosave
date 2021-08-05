@@ -18,10 +18,11 @@ public:
     void initCheckBoxProp();
 
 signals:
-    void checkBoxPick();
+    void checkBoxPicked();
 
 public slots:
-    int userType(QString username);
+    void onCheckBoxPicked();
+   
 
 private:
     Ui::goBuyWidget *ui;

@@ -1,6 +1,7 @@
 #include "qcustomer.h"
 
-QCustomer::QCustomer(QObject *parent) : QObject(parent)
+QCustomer::QCustomer(QString username, QString password, QPerson *parent)
+    : QPerson(username, password, parent)
 {
 
 }

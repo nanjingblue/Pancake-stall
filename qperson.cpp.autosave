@@ -1,7 +1,0 @@
-#include "qperson.h"
-
-QPerson::QPerson(QString username, QString password, QObject *parent) : QObject(parent)
-{
-    this->username = username;
-    this->password = password;
-}

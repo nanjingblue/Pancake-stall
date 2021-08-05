@@ -6,11 +6,19 @@
 class QPerson : public QObject
 {
     Q_OBJECT
+    Q_PROPERTY(int cost READ cost WRITE setCost NOTIFY costChanged)
 public:
-    explicit QPerson(QObject *parent = nullptr);
+    explicit QPerson(QString username, QString password, QObject *parent = nullptr);
+    int cost();
+    void setCost(int value);
 
 signals:
+    void costChanged(int value);
 
+protected:
+    QString username;
+    QString password;
+    int m_cost;
 };
 
 #endif // QPERSON_H
