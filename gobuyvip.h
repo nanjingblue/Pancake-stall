@@ -10,13 +10,30 @@ class GoBuyVip;
 class GoBuyVip : public QWidget
 {
     Q_OBJECT
-
+    Q_PROPERTY(int Cost READ Cost WRITE setCost NOTIFY CostChanged)
 public:
     explicit GoBuyVip(QWidget *parent = nullptr);
     ~GoBuyVip();
+    int Cost();
+    void initCheckBoxProp();
+    void initConn();
+    void setCost(int value);
+
+signals:
+    void CostChanged(int value);
+
+public slots:
+    void onCheckBoxPicked();
+    void onCostChanged();
 
 private:
     Ui::GoBuyVip *ui;
+    int vipCost = 0;
+
+public:
+    static int vipYear;
+    static int vipSeason;
+    static int vipMonth;
 };
 
 #endif // GOBUYVIP_H
