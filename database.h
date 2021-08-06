@@ -11,6 +11,7 @@ public:
     void initUserInfoTable();
     int addUser(QString username, QString password);
     bool isUserExist(QString username, QString password);
+    bool addVip(QString username, int grade);
 
 signals:
 

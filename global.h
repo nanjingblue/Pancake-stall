@@ -1,6 +1,7 @@
 #ifndef GLOBAL_H
 #define GLOBAL_H
 
+#include "database.h"
 #include <QObject>
 
 class Global : public QObject
@@ -11,6 +12,7 @@ public:
     static bool isAdmin;
     static QString username;
     static QString password;
+
 
 signals:
 

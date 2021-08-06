@@ -71,3 +71,17 @@ bool Database::isUserExist(QString username, QString password)
         return false;
     }
 }
+
+bool Database::addVip(QString username, int grade)
+{
+   // 三个等级 grade=1 年卡 | grade=2 季卡 | grade=3 | 月卡
+    QSqlQuery query;
+    QString cmd = QString("UPDATE USERINFO SET VIP=%1 WHERE USERNAME='%2'").arg(grade).arg(username);
+    if(query.exec(cmd)) {
+        qDebug() << "Vip 设置成功" << endl;
+        return true;
+    } else {
+        qDebug() << "Vip 设置失败" << endl;
+        return false;
+    }
+}

@@ -58,7 +58,7 @@ void LoginWindow::on_btnLoginer_clicked()
             Global::password = password;
 
             this->customer = new CustomerForm;
-            this->hide();
+            this->close();
             customer->show();
 
         } else {

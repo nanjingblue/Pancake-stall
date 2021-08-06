@@ -1,6 +1,7 @@
 #ifndef GOBUYVIP_H
 #define GOBUYVIP_H
 
+#include "global.h"
 #include <QWidget>
 
 namespace Ui {

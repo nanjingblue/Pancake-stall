@@ -44,6 +44,6 @@ void welcomeWidget::mouseReleaseEvent(QMouseEvent *event)
 void welcomeWidget::on_pushButton_clicked()
 {
     this->login = new LoginWindow;
-    this->hide();
+    this->close();
     this->login->show();
 }
