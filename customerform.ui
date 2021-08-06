@@ -128,6 +128,45 @@
         <property name="frameShadow">
          <enum>QFrame::Raised</enum>
         </property>
+        <widget class="QPushButton" name="pushButton">
+         <property name="geometry">
+          <rect>
+           <x>510</x>
+           <y>0</y>
+           <width>141</width>
+           <height>91</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>主页</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="pushButton_2">
+         <property name="geometry">
+          <rect>
+           <x>840</x>
+           <y>0</y>
+           <width>141</width>
+           <height>91</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>评价</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="pushButton_3">
+         <property name="geometry">
+          <rect>
+           <x>170</x>
+           <y>0</y>
+           <width>141</width>
+           <height>91</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>会员</string>
+         </property>
+        </widget>
        </widget>
       </item>
      </layout>

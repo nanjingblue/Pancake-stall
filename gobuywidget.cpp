@@ -37,18 +37,29 @@ void goBuyWidget::initCheckBoxConn()
     connect(this->user, &QPerson::costChanged, this, &goBuyWidget::onCostChanged);
     connect(ui->checkBox, SIGNAL(clicked()), this, SLOT(onCheckBoxPicked()));
     connect(ui->checkBox_2, SIGNAL(clicked(bool)), this, SLOT(onCheckBoxPicked()));
-    connect(ui->checkBox_3, SIGNAL(clicked(bool)), this, SLOT(onCheckBoxPicked()));
+    connect(ui->checkBox_3, SIGNAL(stateChanged(int)), this, SLOT(onCheckBoxPicked()));
 }
 
 void goBuyWidget::onCheckBoxPicked()
 {
     QCheckBox *checkBox = qobject_cast<QCheckBox *>(sender());
-    if(checkBox->property("isCake").toBool()) {
-        user->setCost(3);
-    } else if(checkBox->property("isSauce").toBool()) {
-        user->setCost(1);
-    } else if(checkBox->property("isEgg").toBool()) {
-        user->setCost(1);
+    bool status = checkBox->isChecked();
+    if (status ==true ) {
+        if(checkBox->property("isCake").toBool()) {
+            user->setCost(3);
+        } else if(checkBox->property("isSauce").toBool()) {
+            user->setCost(1);
+        } else if(checkBox->property("isEgg").toBool()) {
+            user->setCost(1);
+        }
+    } else {
+        if(checkBox->property("isCake").toBool()) {
+            user->setCost(-3);
+        } else if(checkBox->property("isSauce").toBool()) {
+            user->setCost(-1);
+        } else if(checkBox->property("isEgg").toBool()) {
+            user->setCost(-1);
+        }
     }
 }
 
