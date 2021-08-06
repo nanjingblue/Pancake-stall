@@ -13,8 +13,9 @@ goBuyWidget::goBuyWidget(QWidget *parent) :
     this->user = new QCustomer(Global::username, Global::password);
     this->cake = new Cake;
     // 为菜单设置属性
-   this->initCheckBoxProp();
+    this->initCheckBoxProp();
     this->initCheckBoxConn();
+     ui->OriginalCake->setChecked(true); // Default QriginalCake
 }
 
 goBuyWidget::~goBuyWidget()
@@ -37,8 +38,8 @@ void goBuyWidget::initCheckBoxProp()
 void goBuyWidget::initCheckBoxConn()
 {
     connect(this->cake, &Cake::CostChanged, this, &goBuyWidget::onCostChanged);
-    connect(ui->OriginalCake, SIGNAL(clicked()), this, SLOT(onCheckBoxPicked()));
-    connect(ui->Sauce, SIGNAL(clicked(bool)), this, SLOT(onCheckBoxPicked()));
+    connect(ui->OriginalCake, SIGNAL(stateChanged(int)), this, SLOT(onCheckBoxPicked()));
+    connect(ui->Sauce, SIGNAL(stateChanged(int)), this, SLOT(onCheckBoxPicked()));
     connect(ui->Egg, SIGNAL(stateChanged(int)), this, SLOT(onCheckBoxPicked()));
     connect(ui->Cilantro, SIGNAL(stateChanged(int)), this, SLOT(onCheckBoxPicked()));
     connect(ui->Crispbread, SIGNAL(stateChanged(int)), this, SLOT(onCheckBoxPicked()));

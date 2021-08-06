@@ -89,11 +89,8 @@
          <enum>QFrame::Raised</enum>
         </property>
         <layout class="QHBoxLayout" name="horizontalLayout_5">
-         <property name="spacing">
-          <number>0</number>
-         </property>
          <property name="leftMargin">
-          <number>5</number>
+          <number>9</number>
          </property>
          <property name="topMargin">
           <number>0</number>
@@ -104,6 +101,22 @@
          <property name="bottomMargin">
           <number>0</number>
          </property>
+         <item>
+          <widget class="QLabel" name="labelIcon">
+           <property name="maximumSize">
+            <size>
+             <width>30</width>
+             <height>30</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">border-image: url(:/icon/images/icon/store.svg);</string>
+           </property>
+           <property name="text">
+            <string>TextLabel</string>
+           </property>
+          </widget>
+         </item>
          <item>
           <widget class="QLabel" name="titleLabel">
            <property name="styleSheet">
@@ -620,8 +633,8 @@ font: 24pt &quot;宋体&quot;;</string>
    <slot>showMaximized()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>1080</x>
-     <y>11</y>
+     <x>1107</x>
+     <y>18</y>
     </hint>
     <hint type="destinationlabel">
      <x>1080</x>
@@ -636,8 +649,8 @@ font: 24pt &quot;宋体&quot;;</string>
    <slot>close()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>1110</x>
-     <y>18</y>
+     <x>1144</x>
+     <y>25</y>
     </hint>
     <hint type="destinationlabel">
      <x>1106</x>
@@ -652,8 +665,8 @@ font: 24pt &quot;宋体&quot;;</string>
    <slot>showMinimized()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>1042</x>
-     <y>12</y>
+     <x>1070</x>
+     <y>19</y>
     </hint>
     <hint type="destinationlabel">
      <x>1038</x>

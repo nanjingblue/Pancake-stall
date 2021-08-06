@@ -23,8 +23,9 @@ signals:
     void CostChanged(int value);
 
 public slots:
-    void onCheckBoxPicked();
     void onCostChanged();
+    void onCheckBoxPicked();
+    void onBtnCasualCliked();
 
 private:
     Ui::GoBuyVip *ui;

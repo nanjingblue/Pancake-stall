@@ -37,6 +37,7 @@ void GoBuyVip::initConn()
     connect(ui->checkBoxYear, SIGNAL(stateChanged(int)), this, SLOT(onCheckBoxPicked()));
     connect(ui->checkBoxSeason, SIGNAL(stateChanged(int)), this, SLOT(onCheckBoxPicked()));
     connect(ui->checkBoxMonth, SIGNAL(stateChanged(int)), this, SLOT(onCheckBoxPicked()));
+    connect(ui->btnCancel, SIGNAL(clicked()), this, SLOT(onBtnCasualCliked()));
 }
 
 void GoBuyVip::setCost(int value)
@@ -52,32 +53,33 @@ void GoBuyVip::onCheckBoxPicked()
     if (status == true) {
         if(checkBox->property("isYear").toBool()) {
             this->setCost(this->vipYear);
-            ui->checkBoxSeason->setCheckable(false);
-            ui->checkBoxMonth->setCheckable(false);
+            ui->checkBoxSeason->setChecked(false);
+            ui->checkBoxMonth->setChecked(false);
         } else if(checkBox->property("isSeason").toBool()) {
             this->setCost(this->vipSeason);
-            ui->checkBoxYear->setCheckable(false);
-            ui->checkBoxMonth->setCheckable(false);
+            ui->checkBoxYear->setChecked(false);
+            ui->checkBoxMonth->setChecked(false);
         } else if(checkBox->property("isMonth").toBool()) {
             this->setCost(this->vipMonth);
-            ui->checkBoxYear->setCheckable(false);
-            ui->checkBoxSeason->setCheckable(false);
+            ui->checkBoxYear->setChecked(false);
+            ui->checkBoxSeason->setChecked(false);
         }
     } else {
         if(checkBox->property("isYear").toBool()) {
             this->setCost(-this->vipYear);
-            ui->checkBoxSeason->setCheckable(true);
-            ui->checkBoxMonth->setCheckable(true);
         } else if(checkBox->property("isSeason").toBool()) {
             this->setCost(-this->vipSeason);
-            ui->checkBoxYear->setCheckable(true);
-            ui->checkBoxMonth->setCheckable(true);
         } else if(checkBox->property("isMonth").toBool()) {
             this->setCost(-this->vipMonth);
-            ui->checkBoxYear->setCheckable(true);
-            ui->checkBoxSeason->setCheckable(true);
         }
     }
+}
+
+void GoBuyVip::onBtnCasualCliked()
+{
+    ui->checkBoxYear->setChecked(false);
+    ui->checkBoxSeason->setChecked(false);
+    ui->checkBoxMonth->setChecked(false);
 }
 
 void GoBuyVip::onCostChanged()
