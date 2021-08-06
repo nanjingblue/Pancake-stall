@@ -2,6 +2,7 @@
 #define GOBUYWIDGET_H
 
 #include "qperson.h"
+#include "cake.h"
 #include <QWidget>
 
 namespace Ui {
@@ -28,9 +29,12 @@ public slots:
 private:
     Ui::goBuyWidget *ui;
     QPerson *user;
+    Cake * cake;
 
 public:
     bool isAdmin;
+private slots:
+    void on_pushButton_clicked();
 };
 
 #endif // GOBUYWIDGET_H

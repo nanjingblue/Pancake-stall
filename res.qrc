@@ -4,4 +4,14 @@
         <file>images/login.png</file>
         <file>images/eat.png</file>
     </qresource>
+    <qresource prefix="/icon">
+        <file>images/icon/cake.svg</file>
+        <file>images/icon/Cilantro.svg</file>
+        <file>images/icon/Crispbread.svg</file>
+        <file>images/icon/Egg.svg</file>
+        <file>images/icon/Ham.svg</file>
+        <file>images/icon/loin.svg</file>
+        <file>images/icon/Potato.svg</file>
+        <file>images/icon/Sauce.svg</file>
+    </qresource>
 </RCC>

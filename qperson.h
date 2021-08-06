@@ -1,24 +1,22 @@
 #ifndef QPERSON_H
 #define QPERSON_H
 
+#include "cake.h"
 #include <QObject>
 
 class QPerson : public QObject
 {
     Q_OBJECT
-    Q_PROPERTY(int cost READ cost WRITE setCost NOTIFY costChanged)
 public:
-    explicit QPerson(QString username, QString password, QObject *parent = nullptr);
-    int cost();
-    void setCost(int value);
-
+    virtual void display() const = 0;
 signals:
-    void costChanged(int value);
 
 protected:
     QString username;
     QString password;
     int m_cost = 0;
+public:
+     Cake * cake;
 };
 
 #endif // QPERSON_H

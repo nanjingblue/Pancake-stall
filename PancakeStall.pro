@@ -17,6 +17,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     bossform.cpp \
+    cake.cpp \
     customerform.cpp \
     database.cpp \
     frametitlebar.cpp \
@@ -31,6 +32,7 @@ SOURCES += \
 
 HEADERS += \
     bossform.h \
+    cake.h \
     customerform.h \
     database.h \
     frametitlebar.h \

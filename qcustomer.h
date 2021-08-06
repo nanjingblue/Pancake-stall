@@ -2,18 +2,20 @@
 #define QCUSTOMER_H
 
 #include "qperson.h"
+#include "cake.h"
 #include <QObject>
 
 class QCustomer :public QPerson
 {
     Q_OBJECT
 public:
-    explicit QCustomer(QString username, QString password, QPerson *parent = nullptr);
+    explicit QCustomer(QString username, QString password);
+    void display() const override;
 
 signals:
 
-private:
-
+public:
+    Cake * cake;
 };
 
 #endif // QCUSTOMER_H
