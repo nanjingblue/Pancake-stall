@@ -13,5 +13,8 @@
         <file>images/icon/loin.svg</file>
         <file>images/icon/Potato.svg</file>
         <file>images/icon/Sauce.svg</file>
+        <file>images/icon/Month.svg</file>
+        <file>images/icon/Season.svg</file>
+        <file>images/icon/Year.svg</file>
     </qresource>
 </RCC>

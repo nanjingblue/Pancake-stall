@@ -22,6 +22,7 @@ SOURCES += \
     database.cpp \
     frametitlebar.cpp \
     global.cpp \
+    gobuyvip.cpp \
     gobuywidget.cpp \
     loginwindow.cpp \
     main.cpp \
@@ -37,6 +38,7 @@ HEADERS += \
     database.h \
     frametitlebar.h \
     global.h \
+    gobuyvip.h \
     gobuywidget.h \
     loginwindow.h \
     qboss.h \
@@ -47,6 +49,7 @@ HEADERS += \
 FORMS += \
     bossform.ui \
     customerform.ui \
+    gobuyvip.ui \
     gobuywidget.ui \
     loginwindow.ui \
     welcomewidget.ui

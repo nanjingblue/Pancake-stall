@@ -11,11 +11,13 @@ class QCustomer :public QPerson
 public:
     explicit QCustomer(QString username, QString password);
     void display() const override;
+    bool isVip();
 
 signals:
 
 public:
     Cake * cake;
+    bool vip = false;
 };
 
 #endif // QCUSTOMER_H

@@ -19,7 +19,11 @@ Database::Database(QObject *parent) : QObject(parent)
 
 void Database::initUserInfoTable()
 {
-    QString cmd = "create table if not exists userinfo(username varchar(64), password varchar(64))";
+    QString cmd = "CREATE TABLE IF NOT EXISTS USERINFO(\
+            USERNAME           VARCHAR(64)    NOT NULL,\
+            PASSWORD            VARCHAR(64)     NOT NULL,\
+            VIP                  int    NOT NULL\
+         )";
     // 执行
     QSqlQuery query;
     if (query.exec(cmd)) {
@@ -41,7 +45,7 @@ int Database::addUser(QString username, QString password)
         return 1;
     } else {
         QSqlQuery query;
-        QString cmd  = QString("insert into userinfo values('%1', '%2')").arg(username).arg(password);
+        QString cmd  = QString("insert into userinfo values('%1', '%2', %3)").arg(username).arg(password).arg(0);
         if (query.exec(cmd)) {
             qDebug() << "用户创建成功";
             return 0;
