@@ -54,6 +54,7 @@ void LoginWindow::on_btnLoginer_clicked()
 
             Global::username = username;
             Global::password = password;
+            Global::setDiscount();
 
             this->customer = new CustomerForm;
             this->close();

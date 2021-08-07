@@ -12,6 +12,7 @@ public:
     int addUser(QString username, QString password);
     bool isUserExist(QString username, QString password);
     bool addVip(QString username, int grade);
+    int isVip(QString username);
 
 signals:
 

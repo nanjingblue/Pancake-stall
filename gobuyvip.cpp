@@ -1,6 +1,7 @@
 #include "gobuyvip.h"
 #include "ui_gobuyvip.h"
 #include <QDebug>
+#include <QMessageBox>
 
 int GoBuyVip::vipYear = 60;
 int GoBuyVip::vipSeason = 18;
@@ -94,9 +95,11 @@ void GoBuyVip::onBtnOkClicked()
 {
     bool echo = Global::database->addVip(Global::username, this->grade);
     if(echo == true) {
-        qDebug() << QString("Vip 设置完毕，当前等级为：%1").arg(this->grade);
+//        qDebug() << QString("Vip 设置完毕，当前等级为：%1").arg(this->grade);
+        QMessageBox::information(this, "BuyVip", "感谢你，尊贵的会员大人");
     } else {
-        qDebug() << "Vip 购买失败";
+//        qDebug() << "Vip 购买失败";
+        QMessageBox::information(this, "BuyVip", "会员购买失败，请重新尝试");
     }
 }
 

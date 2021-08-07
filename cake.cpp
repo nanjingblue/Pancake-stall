@@ -5,12 +5,12 @@ Cake::Cake(QObject *parent) : QObject(parent)
 
 }
 
-int Cake::Cost()
+float Cake::Cost()
 {
     return this->c_cost;
 }
 
-void Cake::setCost(int value)
+void Cake::setCost(float value)
 {
     this->c_cost += value;
     emit(this->CostChanged(this->c_cost));

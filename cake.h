@@ -6,14 +6,14 @@
 class Cake : public QObject
 {
     Q_OBJECT
-    Q_PROPERTY(int Cost READ Cost WRITE setCost NOTIFY CostChanged)
+    Q_PROPERTY(float Cost READ Cost WRITE setCost NOTIFY CostChanged)
 public:
     explicit Cake(QObject *parent = nullptr);
-    int Cost();
-    void setCost(int);
+    float Cost();
+    void setCost(float);
 
 signals:
-    void CostChanged(int value);
+    void CostChanged(float value);
 
 public:
     static int QriginalCake;
@@ -26,7 +26,7 @@ public:
     static int Youtiao;
     static int Loin;
 private:
-    int c_cost = 0;
+    float c_cost = 0;
 
 };
 

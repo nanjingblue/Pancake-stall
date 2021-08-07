@@ -85,3 +85,16 @@ bool Database::addVip(QString username, int grade)
         return false;
     }
 }
+
+int Database::isVip(QString username)
+{
+    QSqlQuery query;
+    QString cmd = QString("select vip from userinfo where username='%1'").arg(username);
+    query.prepare(cmd);
+    if(query.exec(cmd) && query.first()) { // 此处必须要执行 query.first() 才是第一条数据 如果有很多条可以循环使用 query.next()
+        return query.value(0).toInt();
+    } else {
+        qDebug() << "查询Vip出错";
+        return 0;
+    }
+}

@@ -3,6 +3,7 @@
 #include "qcustomer.h"
 #include "global.h"
 #include "cake.h"
+#include <QDebug>
 
 
 goBuyWidget::goBuyWidget(QWidget *parent) :
@@ -46,6 +47,11 @@ void goBuyWidget::initCheckBoxConn()
     connect(ui->Ham, SIGNAL(stateChanged(int)), this, SLOT(onCheckBoxPicked()));
     connect(ui->Potato, SIGNAL(stateChanged(int)), this, SLOT(onCheckBoxPicked()));
     connect(ui->Loin, SIGNAL(stateChanged(int)), this, SLOT(onCheckBoxPicked()));
+}
+
+void goBuyWidget::initLabelVipInfo()
+{
+
 }
 
 void goBuyWidget::onCheckBoxPicked()
@@ -94,8 +100,9 @@ void goBuyWidget::onCheckBoxPicked()
 void goBuyWidget::onCostChanged()
 {
     Cake * aCake= qobject_cast<Cake *>(sender());
-    int aCost = aCake->Cost();
-    ui->label->setText(QString::asprintf("%d", aCost));
+    float aCost = aCake->Cost();
+    float cost = aCost * Global::discount;
+    ui->label->setText(QString::asprintf("%.2f", cost));
 }
 
 void goBuyWidget::on_pushButton_clicked()

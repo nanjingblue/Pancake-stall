@@ -13,7 +13,11 @@ public:
     static QString username;
     static QString password;
     static Database *database;
+    static float discount;
+    static int grade;
 
+
+    static void setDiscount();
 
 signals:
 

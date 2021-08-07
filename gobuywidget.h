@@ -18,6 +18,7 @@ public:
     ~goBuyWidget();
     void initCheckBoxProp();
     void initCheckBoxConn();
+    void initLabelVipInfo();
 signals:
     void checkBoxPicked();
 
