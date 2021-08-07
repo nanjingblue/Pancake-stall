@@ -11,11 +11,13 @@ CustomerForm::CustomerForm(QWidget *parent) :
 
     this->goBuyPage = new goBuyWidget(ui->stackedWidget);
     this->goBuyVip = new GoBuyVip(ui->stackedWidget);
+    this->comment = new GoComment(ui->stackedWidget);
 
     this->initBtnConn();
 
     ui->stackedWidget->addWidget(goBuyPage);
     ui->stackedWidget->addWidget(goBuyVip);
+    ui->stackedWidget->addWidget(comment);
     ui->stackedWidget->setCurrentWidget(goBuyPage);
 }
 
@@ -28,6 +30,7 @@ void CustomerForm::initBtnConn()
 {
     connect(ui->btnHome, SIGNAL(clicked()), this, SLOT(onBtnHome()));
     connect(ui->btnVip, SIGNAL(clicked()), this, SLOT(onBtnVip()));
+    connect(ui->btnComment, SIGNAL(clicked()), this, SLOT(onBtnComment()));
 }
 
 void CustomerForm::onBtnHome()
@@ -38,4 +41,9 @@ void CustomerForm::onBtnHome()
 void CustomerForm::onBtnVip()
 {
     ui->stackedWidget->setCurrentWidget(this->goBuyVip);
+}
+
+void CustomerForm::onBtnComment()
+{
+    ui->stackedWidget->setCurrentWidget(this->comment);
 }

@@ -10,8 +10,6 @@ LoginWindow::LoginWindow(QWidget *parent) :
     ui->setupUi(this);
     this->setWindowFlags(Qt::FramelessWindowHint);
     this->setMinimumSize(1164, 729);
-    // 初始化数据库
-//    this->database = new Database;
     this->message = ui->messageLabel;
 }
 
@@ -29,7 +27,6 @@ void LoginWindow::on_btnRegister_clicked()
     } else if(password=="") {
         QMessageBox::information(this, "Register", "Password can't be empty");
     }
-//    int echo = this->database->addUser(username, password);
     int echo = Global::database->addUser(username, password);
     if(echo==1) {
         QMessageBox::information(this, "Register", "User already exists, please login");

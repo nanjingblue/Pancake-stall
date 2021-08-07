@@ -27,10 +27,12 @@ public slots:
     void onCostChanged();
     void onCheckBoxPicked();
     void onBtnCasualCliked();
+    void onBtnOkClicked();
 
 private:
     Ui::GoBuyVip *ui;
     int vipCost = 0;
+    int grade = 0;
 
 public:
     static int vipYear;

@@ -26,7 +26,6 @@ private slots:
 
 private:
     Ui::LoginWindow *ui;
-    Database * database;
     QLabel * message;
     CustomerForm * customer;
 };
