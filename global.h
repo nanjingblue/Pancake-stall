@@ -12,6 +12,7 @@ public:
     static bool isAdmin;
     static QString username;
     static QString password;
+    static Database *database;
 
 
 signals:

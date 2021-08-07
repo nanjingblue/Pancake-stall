@@ -11,7 +11,7 @@ LoginWindow::LoginWindow(QWidget *parent) :
     this->setWindowFlags(Qt::FramelessWindowHint);
     this->setMinimumSize(1164, 729);
     // 初始化数据库
-    this->database = new Database;
+//    this->database = new Database;
     this->message = ui->messageLabel;
 }
 
@@ -29,7 +29,8 @@ void LoginWindow::on_btnRegister_clicked()
     } else if(password=="") {
         QMessageBox::information(this, "Register", "Password can't be empty");
     }
-    int echo = this->database->addUser(username, password);
+//    int echo = this->database->addUser(username, password);
+    int echo = Global::database->addUser(username, password);
     if(echo==1) {
         QMessageBox::information(this, "Register", "User already exists, please login");
     } else if(echo==0) {
@@ -48,7 +49,7 @@ void LoginWindow::on_btnLoginer_clicked()
     } else if(password == "") {
         this->message->setText("Password can't be empty");
     } else {
-        if(this->database->isUserExist(username, password)) {
+        if(Global::database->isUserExist(username, password)) {
             this->message->setText("Logining");
             // 设置当前用户 使用全局变量
             if(username == "admin") Global::isAdmin = true;
