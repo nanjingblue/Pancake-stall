@@ -127,3 +127,14 @@ int Database::isVip(QString username)
         return 0;
     }
 }
+
+bool Database::addSold(QString username, int vip, int price, int value[])
+{
+    QString cmd = QString("INSERT INTO SOLDINFO \
+                          (ID,USERNAME,VIP,PRICE,ORIGINCAKE,SAUCE,\
+                         CILANTRO,EGG,CRISPBREAD,HAM,POTATO,LOIN,YOUTIAO) \
+                       VALUES(NULL,'%1',%2,%3, %4,%5,%6,%7,%8,%9,%10,%11,%12)")
+                          .arg(username).arg(vip).arg(price)
+                          .arg(value[1]).arg(value[2]).arg(value[3]).arg(value[4]).arg(value[5])
+                        
+}

@@ -286,7 +286,7 @@
            <widget class="QLabel" name="label_7">
             <property name="geometry">
              <rect>
-              <x>700</x>
+              <x>680</x>
               <y>160</y>
               <width>80</width>
               <height>70</height>
@@ -347,6 +347,38 @@
              <string>里脊</string>
             </property>
            </widget>
+           <widget class="QLabel" name="label_11">
+            <property name="geometry">
+             <rect>
+              <x>680</x>
+              <y>280</y>
+              <width>85</width>
+              <height>75</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">border-image: url(:/icon/images/icon/Youtiao.svg);</string>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+           <widget class="QCheckBox" name="Youtiao">
+            <property name="geometry">
+             <rect>
+              <x>780</x>
+              <y>290</y>
+              <width>81</width>
+              <height>41</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">font: 12pt &quot;宋体&quot;;</string>
+            </property>
+            <property name="text">
+             <string>油条</string>
+            </property>
+           </widget>
           </widget>
          </item>
         </layout>
@@ -394,7 +426,8 @@
              </rect>
             </property>
             <property name="styleSheet">
-             <string notr="true">font: 18pt &quot;宋体&quot;;</string>
+             <string notr="true">font: 75 28pt &quot;Comic Sans MS&quot;;
+color: rgb(248, 73, 95);</string>
             </property>
             <property name="text">
              <string/>
@@ -432,14 +465,15 @@
            <widget class="QLabel" name="labelVipInfo">
             <property name="geometry">
              <rect>
-              <x>220</x>
+              <x>10</x>
               <y>40</y>
-              <width>341</width>
+              <width>551</width>
               <height>61</height>
              </rect>
             </property>
             <property name="styleSheet">
-             <string notr="true">font: 16pt &quot;宋体&quot;;</string>
+             <string notr="true">font: 18pt &quot;宋体&quot;;
+color: rgb(101, 201, 207);</string>
             </property>
             <property name="text">
              <string/>

@@ -16,15 +16,15 @@ signals:
     void CostChanged(float value);
 
 public:
-    static int QriginalCake;
-    static int Sauce;
-    static int Cilantro;
-    static int Egg;
-    static int Crispbread;
-    static int Ham;
-    static int Potato;
-    static int Youtiao;
-    static int Loin;
+    int QriginalCake = 0;
+    int Sauce = 0;
+    int Cilantro = 0;
+    int Egg = 0;
+    int Crispbread = 0;
+    int Ham = 0;
+    int Potato = 0;
+    int Youtiao = 0;
+    int Loin = 0;
 private:
     float c_cost = 0;
 

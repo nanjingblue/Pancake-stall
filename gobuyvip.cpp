@@ -36,16 +36,16 @@ void GoBuyVip::initCheckBoxProp()
 void GoBuyVip::initConn()
 {
     connect(this, SIGNAL(CostChanged(int)), this, SLOT(onCostChanged()));
-    connect(ui->checkBoxYear, SIGNAL(stateChanged(int)), this, SLOT(onCheckBoxPicked()));
-    connect(ui->checkBoxSeason, SIGNAL(stateChanged(int)), this, SLOT(onCheckBoxPicked()));
-    connect(ui->checkBoxMonth, SIGNAL(stateChanged(int)), this, SLOT(onCheckBoxPicked()));
+    connect(ui->checkBoxYear, SIGNAL(clicked()), this, SLOT(onCheckBoxPicked()));
+    connect(ui->checkBoxSeason, SIGNAL(clicked()), this, SLOT(onCheckBoxPicked()));
+    connect(ui->checkBoxMonth, SIGNAL(clicked()), this, SLOT(onCheckBoxPicked()));
     connect(ui->btnCancel, SIGNAL(clicked()), this, SLOT(onBtnCasualCliked()));
     connect(ui->btnOk, SIGNAL(clicked()), this, SLOT(onBtnOkClicked()));
 }
 
 void GoBuyVip::setCost(int value)
 {
-    this->vipCost += value;
+    this->vipCost = value;
     emit(this->CostChanged(this->vipCost));
 }
 
@@ -73,11 +73,11 @@ void GoBuyVip::onCheckBoxPicked()
 //        qDebug() << "变化" << endl;
     } else {
         if(checkBox->property("isYear").toBool()) {
-            this->setCost(-this->vipYear);
+            this->setCost(0);
         } else if(checkBox->property("isSeason").toBool()) {
-            this->setCost(-this->vipSeason);
+            this->setCost(0);
         } else if(checkBox->property("isMonth").toBool()) {
-            this->setCost(-this->vipMonth);
+            this->setCost(0);
         }
         this->grade = 0;
 //        qDebug() << "归零" << endl;
@@ -101,6 +101,7 @@ void GoBuyVip::onBtnOkClicked()
 //        qDebug() << "Vip 购买失败";
         QMessageBox::information(this, "BuyVip", "会员购买失败，请重新尝试");
     }
+    Global::setDiscount();
 }
 
 void GoBuyVip::onCostChanged()

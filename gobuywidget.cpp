@@ -16,6 +16,7 @@ goBuyWidget::goBuyWidget(QWidget *parent) :
     // 为菜单设置属性
     this->initCheckBoxProp();
     this->initCheckBoxConn();
+    this->initLabelVipInfo();
      ui->OriginalCake->setChecked(true); // Default QriginalCake
 }
 
@@ -34,6 +35,7 @@ void goBuyWidget::initCheckBoxProp()
     ui->Ham->setProperty("isHam", true);
     ui->Potato->setProperty("isPotato", true);
     ui->Loin->setProperty("isLoin", true);
+    ui->Youtiao->setProperty("isYoutiao", true);
 }
 
 void goBuyWidget::initCheckBoxConn()
@@ -47,11 +49,21 @@ void goBuyWidget::initCheckBoxConn()
     connect(ui->Ham, SIGNAL(stateChanged(int)), this, SLOT(onCheckBoxPicked()));
     connect(ui->Potato, SIGNAL(stateChanged(int)), this, SLOT(onCheckBoxPicked()));
     connect(ui->Loin, SIGNAL(stateChanged(int)), this, SLOT(onCheckBoxPicked()));
+    connect(ui->Youtiao, SIGNAL(stateChanged(int)), this, SLOT(onCheckBoxPicked()));
 }
 
 void goBuyWidget::initLabelVipInfo()
 {
-
+    int echo = Global::database->isVip(Global::username);
+    if(echo ==0) {
+        ui->labelVipInfo->setText("普通用户");
+    } else if(echo == 1) {
+        ui->labelVipInfo->setText("皇冠年卡会员，享受 8 折优惠");
+    } else if(echo == 2) {
+        ui->labelVipInfo->setText("钻石季卡会员，享受 8.5 折优惠");
+    } else if(echo == 3) {
+        ui->labelVipInfo->setText("普通月卡会员，享受 9 折优惠");
+    }
 }
 
 void goBuyWidget::onCheckBoxPicked()
@@ -60,39 +72,43 @@ void goBuyWidget::onCheckBoxPicked()
     bool status = checkBox->isChecked();
     if (status ==true ) {
         if(checkBox->property("isQriginalCake").toBool()) {
-            cake->setCost(Cake::QriginalCake);
+            cake->setCost(Global::QriginalCake);
         } else if(checkBox->property("isSauce").toBool()) {
-            cake->setCost(Cake::Sauce);
+            cake->setCost(Global::Sauce);
         } else if(checkBox->property("isEgg").toBool()) {
-            cake->setCost(Cake::Egg);
+            cake->setCost(Global::Egg);
         } else if(checkBox->property("isCilantro").toBool()) {
-            cake->setCost(Cake::Cilantro);
+            cake->setCost(Global::Cilantro);
         } else if(checkBox->property("isCrispbread").toBool()) {
-            cake->setCost(Cake::Crispbread);
+            cake->setCost(Global::Crispbread);
         } else if(checkBox->property("isHam").toBool()) {
-            cake->setCost(Cake::Ham);
+            cake->setCost(Global::Ham);
         } else if(checkBox->property("isPotato").toBool()) {
-            cake->setCost(Cake::Potato);
+            cake->setCost(Global::Potato);
         } else if(checkBox->property("isLoin").toBool()) {
-            cake->setCost(Cake::Loin);
+            cake->setCost(Global::Loin);
+        } else if(checkBox->property("isYoutiao").toBool()) {
+            cake->setCost(Global::Youtiao);
         }
     } else {
         if(checkBox->property("isQriginalCake").toBool()) {
-            cake->setCost(-Cake::QriginalCake);
+            cake->setCost(-Global::QriginalCake);
         } else if(checkBox->property("isSauce").toBool()) {
-            cake->setCost(-Cake::Sauce);
+            cake->setCost(-Global::Sauce);
         } else if(checkBox->property("isEgg").toBool()) {
-            cake->setCost(-Cake::Egg);
+            cake->setCost(-Global::Egg);
         } else if(checkBox->property("isCilantro").toBool()) {
-            cake->setCost(-Cake::Cilantro);
+            cake->setCost(-Global::Cilantro);
         } else if(checkBox->property("isCrispbread").toBool()) {
-            cake->setCost(-Cake::Crispbread);
+            cake->setCost(-Global::Crispbread);
         } else if(checkBox->property("isHam").toBool()) {
-            cake->setCost(-Cake::Ham);
+            cake->setCost(-Global::Ham);
         } else if(checkBox->property("isPotato").toBool()) {
-            cake->setCost(-Cake::Potato);
+            cake->setCost(-Global::Potato);
         } else if(checkBox->property("isLoin").toBool()) {
-            cake->setCost(-Cake::Loin);
+            cake->setCost(-Global::Loin);
+        } else if(checkBox->property("isYoutiao").toBool()) {
+            cake->setCost(-Global::Youtiao);
         }
     }
 }

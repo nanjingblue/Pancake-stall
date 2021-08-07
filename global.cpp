@@ -28,3 +28,14 @@ QString Global::password = "";
 Database * Global::database = new Database;
 float Global::discount = 1;
 int Global::grade = 0;
+
+// 配料
+int Global::QriginalCake = 3;
+int Global::Sauce = 0;
+int Global::Cilantro = 0;
+int Global::Egg = 1;
+int Global::Crispbread = 1;
+int Global::Ham = 1;
+int Global::Potato = 1;
+int Global::Youtiao = 1;
+int Global::Loin = 1;
