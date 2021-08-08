@@ -433,7 +433,7 @@ color: rgb(248, 73, 95);</string>
              <string/>
             </property>
            </widget>
-           <widget class="QPushButton" name="pushButton">
+           <widget class="QPushButton" name="btnGoBuy">
             <property name="geometry">
              <rect>
               <x>890</x>
@@ -494,4 +494,7 @@ color: rgb(101, 201, 207);</string>
  </widget>
  <resources/>
  <connections/>
+ <slots>
+  <slot>slot1()</slot>
+ </slots>
 </ui>

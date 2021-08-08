@@ -15,3 +15,8 @@ void Cake::setCost(float value)
     this->c_cost += value;
     emit(this->CostChanged(this->c_cost));
 }
+
+void Cake::setC_Cost(float value)
+{
+    this->c_cost = value;
+}

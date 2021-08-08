@@ -22,9 +22,10 @@ public:
 signals:
     void checkBoxPicked();
 
-public slots:
+private slots:
     void onCheckBoxPicked();
     void onCostChanged();
+    void onBtnGoBuyClicked();
 
 
 private:
@@ -34,8 +35,6 @@ private:
 
 public:
     bool isAdmin;
-private slots:
-    void on_pushButton_clicked();
 };
 
 #endif // GOBUYWIDGET_H

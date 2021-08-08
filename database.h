@@ -15,8 +15,8 @@ public:
     bool isUserExist(QString username, QString password);
     bool addVip(QString username, int grade);
     int isVip(QString username);
-    bool addCakeSold(QString username, int vip, int price, int value[]);
-    bool addVipSold(QString username, int vip, int price);
+    bool addCakeSold(QString username, int vipGrade, float cakePrice, int value[]);
+    bool addVipSold(QString username, int vipGrade, int vipPrice);
 
 private:
 

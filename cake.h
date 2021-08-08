@@ -11,6 +11,7 @@ public:
     explicit Cake(QObject *parent = nullptr);
     float Cost();
     void setCost(float);
+    void setC_Cost(float value);
 
 signals:
     void CostChanged(float value);
@@ -25,6 +26,7 @@ public:
     int Potato = 0;
     int Youtiao = 0;
     int Loin = 0;
+    int value[10] = {0};
 private:
     float c_cost = 0;
 

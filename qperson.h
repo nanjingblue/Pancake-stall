@@ -17,6 +17,7 @@ protected:
     int m_cost = 0;
 public:
      Cake * cake;
+     int grade;
 };
 
 #endif // QPERSON_H

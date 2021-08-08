@@ -50,6 +50,7 @@ void goBuyWidget::initCheckBoxConn()
     connect(ui->Potato, SIGNAL(stateChanged(int)), this, SLOT(onCheckBoxPicked()));
     connect(ui->Loin, SIGNAL(stateChanged(int)), this, SLOT(onCheckBoxPicked()));
     connect(ui->Youtiao, SIGNAL(stateChanged(int)), this, SLOT(onCheckBoxPicked()));
+    connect(ui->btnGoBuy, SIGNAL(clicked()), this, SLOT(onBtnGoBuyClicked()));
 }
 
 void goBuyWidget::initLabelVipInfo()
@@ -73,42 +74,60 @@ void goBuyWidget::onCheckBoxPicked()
     if (status ==true ) {
         if(checkBox->property("isQriginalCake").toBool()) {
             cake->setCost(Global::QriginalCake);
+            cake->value[1]++;
         } else if(checkBox->property("isSauce").toBool()) {
             cake->setCost(Global::Sauce);
+            cake->value[2]++;
         } else if(checkBox->property("isEgg").toBool()) {
             cake->setCost(Global::Egg);
+            cake->value[3]++;
         } else if(checkBox->property("isCilantro").toBool()) {
             cake->setCost(Global::Cilantro);
+            cake->value[4]++;
         } else if(checkBox->property("isCrispbread").toBool()) {
             cake->setCost(Global::Crispbread);
+            cake->value[5]++;
         } else if(checkBox->property("isHam").toBool()) {
             cake->setCost(Global::Ham);
+            cake->value[6]++;
         } else if(checkBox->property("isPotato").toBool()) {
             cake->setCost(Global::Potato);
+            cake->value[7]++;
         } else if(checkBox->property("isLoin").toBool()) {
             cake->setCost(Global::Loin);
+            cake->value[8]++;
         } else if(checkBox->property("isYoutiao").toBool()) {
             cake->setCost(Global::Youtiao);
+            cake->value[9]++;
         }
     } else {
         if(checkBox->property("isQriginalCake").toBool()) {
             cake->setCost(-Global::QriginalCake);
+            cake->value[1]--;
         } else if(checkBox->property("isSauce").toBool()) {
             cake->setCost(-Global::Sauce);
+            cake->value[2]--;
         } else if(checkBox->property("isEgg").toBool()) {
             cake->setCost(-Global::Egg);
+            cake->value[3]--;
         } else if(checkBox->property("isCilantro").toBool()) {
             cake->setCost(-Global::Cilantro);
+            cake->value[4]--;
         } else if(checkBox->property("isCrispbread").toBool()) {
             cake->setCost(-Global::Crispbread);
+            cake->value[5]--;
         } else if(checkBox->property("isHam").toBool()) {
             cake->setCost(-Global::Ham);
+            cake->value[6]--;
         } else if(checkBox->property("isPotato").toBool()) {
             cake->setCost(-Global::Potato);
+            cake->value[7]--;
         } else if(checkBox->property("isLoin").toBool()) {
             cake->setCost(-Global::Loin);
+            cake->value[8]--;
         } else if(checkBox->property("isYoutiao").toBool()) {
             cake->setCost(-Global::Youtiao);
+            cake->value[9]--;
         }
     }
 }
@@ -118,10 +137,20 @@ void goBuyWidget::onCostChanged()
     Cake * aCake= qobject_cast<Cake *>(sender());
     float aCost = aCake->Cost();
     float cost = aCost * Global::discount;
+    this->cake->setC_Cost(cost);
     ui->label->setText(QString::asprintf("%.2f", cost));
 }
 
-void goBuyWidget::on_pushButton_clicked()
+void goBuyWidget::onBtnGoBuyClicked()
 {
+    user->grade = Global::grade;
     user->cake = this->cake;
+    bool echo = Global::database->addCakeSold(Global::username, user->grade, user->cake->Cost(), user->cake->value);
+    if(echo) {
+        qDebug() << "Cake购买成功";
+    } else {
+        qDebug() << "Cake购买失败";
+    }
 }
+
+

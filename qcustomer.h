@@ -17,7 +17,7 @@ signals:
 
 public:
     Cake * cake;
-    bool vip = false;
+    int grade;
 };
 
 #endif // QCUSTOMER_H

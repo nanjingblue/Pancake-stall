@@ -5,9 +5,12 @@ Global::Global(QObject *parent) : QObject(parent)
 
 }
 
+// 此函数登录是调用 以配置初始化
 void Global::setDiscount()
 {
     int echo = database->isVip(username);
+    // 更新会员等级
+    Global::grade = echo;
     switch (echo) {
     case 0:
         discount = 1.00; grade = 0; break;
@@ -27,7 +30,7 @@ QString Global::username = "";
 QString Global::password = "";
 Database * Global::database = new Database;
 float Global::discount = 1;
-int Global::grade = 0;
+int Global::grade =0;
 
 // 配料
 int Global::QriginalCake = 3;

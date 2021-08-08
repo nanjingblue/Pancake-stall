@@ -129,21 +129,21 @@ int Database::isVip(QString username)
     }
 }
 
-bool Database::addCakeSold(QString username, int vip, int price, int value[])
+bool Database::addCakeSold(QString username, int vipGrade, float cakePrice, int value[])
 {
     QString cmd = QString("INSERT INTO SOLDINFO \
                           (ID,USERNAME,VIPGRADE,CAKEPRICE,ORIGINCAKE,SAUCE,\
                           CILANTRO,EGG,CRISPBREAD,HAM,POTATO,LOIN,YOUTIAO) \
                           VALUES(NULL,'%1',%2,%3, %4,%5,%6,%7,%8,%9,%10,%11,%12)")
-                          .arg(username).arg(vip).arg(price)
+                          .arg(username).arg(vipGrade).arg(cakePrice)
                           .arg(value[1]).arg(value[2]).arg(value[3]).arg(value[4]).arg(value[5])
                           .arg(value[6]).arg(value[7]).arg(value[8]).arg(value[9]);
     QSqlQuery query;
     if(query.exec(cmd)) {
-//        qDebug() << "销售成功";
+        qDebug() << "Cake销售成功，添加至数据库";
         return true;
     } else {
-//        qDebug() << "销售失败";
+        qDebug() << "Cake销售失败，无法添加至数据库";
         return false;
     }
 }
@@ -154,10 +154,10 @@ bool Database::addVipSold(QString username, int vipGrade, int vipPrice)
                           .arg(username).arg(vipGrade).arg(vipPrice);
     QSqlQuery query;
     if(query.exec(cmd)) {
-        qDebug() << "销售成功";
+         qDebug() << "Vip购买成功，添加至数据库";
         return true;
     } else {
-        qDebug() << "销售失败";
+        qDebug() << "Vip购买失败，无法添加至数据库";
         return false;
     }
 }
