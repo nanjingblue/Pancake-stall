@@ -19,7 +19,6 @@ public:
     bool addVipSold(QString username, int vip, int price);
 
 private:
-    QSqlQuery query;
 
 signals:
 

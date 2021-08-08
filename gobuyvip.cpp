@@ -93,6 +93,11 @@ void GoBuyVip::onBtnCasualCliked()
 
 void GoBuyVip::onBtnOkClicked()
 {
+    int vipGrade = Global::database->isVip(Global::username);
+    if(vipGrade <= this->grade && vipGrade != 0) {
+        QMessageBox::information(this,"buyVip", "当前会员等级高于或等于购买等级");
+        return;
+    }
     bool echo = Global::database->addVip(Global::username, this->grade);
     if(echo == true) {
 //        qDebug() << QString("Vip 设置完毕，当前等级为：%1").arg(this->grade);

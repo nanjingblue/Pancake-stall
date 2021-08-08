@@ -138,7 +138,8 @@ bool Database::addCakeSold(QString username, int vip, int price, int value[])
                           .arg(username).arg(vip).arg(price)
                           .arg(value[1]).arg(value[2]).arg(value[3]).arg(value[4]).arg(value[5])
                           .arg(value[6]).arg(value[7]).arg(value[8]).arg(value[9]);
-    if(this->query.exec(cmd)) {
+    QSqlQuery query;
+    if(query.exec(cmd)) {
 //        qDebug() << "销售成功";
         return true;
     } else {
