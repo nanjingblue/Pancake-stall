@@ -101,7 +101,16 @@ void GoBuyVip::onBtnOkClicked()
 //        qDebug() << "Vip 购买失败";
         QMessageBox::information(this, "BuyVip", "会员购买失败，请重新尝试");
     }
+    // 设置全局变量
+    Global::grade = this->grade;
     Global::setDiscount();
+    // 加入销售记录表
+    echo = Global::database->addVipSold(Global::username, this->grade, this->vipCost);
+    if(echo) {
+        qDebug() << "购买Vip记录添加成功";
+    } else {
+        qDebug() << "购买Vip记录添加失败";
+    }
 }
 
 void GoBuyVip::onCostChanged()

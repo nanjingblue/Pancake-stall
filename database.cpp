@@ -41,8 +41,9 @@ void Database::initSoldInfoTable()
     QString cmd = "CREATE TABLE IF NOT EXISTS SOLDINFO(\
             ID                          INTEGER                 PRIMARY KEY  AUTOINCREMENT,\
             USERNAME           VARCHAR(64)          NOT NULL,\
-            VIP                         INT                         DEFAULT 0,\
-            PRICE                     INT                         DEFAULT 0,\
+            VIPGRADE              INT                         DEFAULT 0,\
+            CAKEPRICE            FLOAT                      DEFAULT 0,\
+            VIPPRICE                INT                         DEFAULT 0,\
             ORIGINCAKE         INT                         DEFAULT 0,\
             SAUCE                    INT                         DEFAULT 0,\
             CILANTRO             INT                          DEFAULT 0,\
@@ -107,7 +108,7 @@ bool Database::addVip(QString username, int grade)
     QSqlQuery query;
     QString cmd = QString("UPDATE USERINFO SET VIP=%1 WHERE USERNAME='%2'").arg(grade).arg(username);
     if(query.exec(cmd)) {
-        qDebug() << "Vip 设置成功" << endl;
+//        qDebug() << "Vip 设置成功";
         return true;
     } else {
         qDebug() << "Vip 设置失败" << endl;
@@ -125,5 +126,37 @@ int Database::isVip(QString username)
     } else {
         qDebug() << "查询Vip出错";
         return 0;
+    }
+}
+
+bool Database::addCakeSold(QString username, int vip, int price, int value[])
+{
+    QString cmd = QString("INSERT INTO SOLDINFO \
+                          (ID,USERNAME,VIPGRADE,CAKEPRICE,ORIGINCAKE,SAUCE,\
+                          CILANTRO,EGG,CRISPBREAD,HAM,POTATO,LOIN,YOUTIAO) \
+                          VALUES(NULL,'%1',%2,%3, %4,%5,%6,%7,%8,%9,%10,%11,%12)")
+                          .arg(username).arg(vip).arg(price)
+                          .arg(value[1]).arg(value[2]).arg(value[3]).arg(value[4]).arg(value[5])
+                          .arg(value[6]).arg(value[7]).arg(value[8]).arg(value[9]);
+    if(this->query.exec(cmd)) {
+//        qDebug() << "销售成功";
+        return true;
+    } else {
+//        qDebug() << "销售失败";
+        return false;
+    }
+}
+
+bool Database::addVipSold(QString username, int vipGrade, int vipPrice)
+{
+    QString cmd = QString("INSERT INTO SOLDINFO (ID, USERNAME, VIPGRADE, VIPPRICE)VALUES(NULL, '%1', %2, %3)")
+                          .arg(username).arg(vipGrade).arg(vipPrice);
+    QSqlQuery query;
+    if(query.exec(cmd)) {
+        qDebug() << "销售成功";
+        return true;
+    } else {
+        qDebug() << "销售失败";
+        return false;
     }
 }

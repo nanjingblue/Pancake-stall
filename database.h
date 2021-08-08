@@ -2,6 +2,7 @@
 #define DATABASE_H
 
 #include <QObject>
+#include <QSqlQuery>
 
 class Database : public QObject
 {
@@ -14,6 +15,11 @@ public:
     bool isUserExist(QString username, QString password);
     bool addVip(QString username, int grade);
     int isVip(QString username);
+    bool addCakeSold(QString username, int vip, int price, int value[]);
+    bool addVipSold(QString username, int vip, int price);
+
+private:
+    QSqlQuery query;
 
 signals:
 
