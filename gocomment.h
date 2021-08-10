@@ -15,6 +15,9 @@ public:
     explicit GoComment(QWidget *parent = nullptr);
     ~GoComment();
 
+private slots:
+    void onBtnYesClicked();
+
 private:
     Ui::GoComment *ui;
 };

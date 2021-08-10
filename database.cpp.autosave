@@ -126,7 +126,7 @@ bool Database::addVip(QString username, int grade)
     QSqlQuery query;
     QString cmd = QString("UPDATE USERINFO SET VIP=%1 WHERE USERNAME='%2'").arg(grade).arg(username);
     if(query.exec(cmd)) {
-//        qDebug() << "Vip 设置成功";
+        qDebug() << "Vip 设置成功";
         return true;
     } else {
         qDebug() << "Vip 设置失败" << endl;

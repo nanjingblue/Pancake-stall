@@ -11,12 +11,14 @@ public:
     explicit Database(QObject *parent = nullptr);
     void initUserInfoTable();
     void initSoldInfoTable();
+    void initCommentInfoTable();
     int addUser(QString username, QString password);
     bool isUserExist(QString username, QString password);
     bool addVip(QString username, int grade);
     int isVip(QString username);
     bool addCakeSold(QString username, int vipGrade, float cakePrice, int value[]);
     bool addVipSold(QString username, int vipGrade, int vipPrice);
+    bool addComment(QString username, QString comment);
 
 private:
 
