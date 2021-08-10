@@ -23,6 +23,8 @@ goBuyWidget::goBuyWidget(QWidget *parent) :
 goBuyWidget::~goBuyWidget()
 {
     delete ui;
+    delete this->cake;
+    delete this->user;
 }
 
 void goBuyWidget::initCheckBoxProp()
@@ -71,7 +73,7 @@ void goBuyWidget::onCheckBoxPicked()
 {
     QCheckBox *checkBox = qobject_cast<QCheckBox *>(sender());
     bool status = checkBox->isChecked();
-    if (status ==true ) {
+    if (status == true ) {
         if(checkBox->property("isQriginalCake").toBool()) {
             cake->setCost(Global::QriginalCake);
             cake->value[1]++;
@@ -136,14 +138,13 @@ void goBuyWidget::onCostChanged()
 {
     Cake * aCake= qobject_cast<Cake *>(sender());
     float aCost = aCake->Cost();
-    float cost = aCost * Global::discount;
-    this->cake->setC_Cost(cost);
-    ui->label->setText(QString::asprintf("%.2f", cost));
+    ui->label->setText(QString::asprintf("%.2f", aCost*Global::discount));
 }
 
 void goBuyWidget::onBtnGoBuyClicked()
 {
     user->grade = Global::grade;
+    this->cake->setC_Cost(this->cake->Cost()*Global::discount);
     user->cake = this->cake;
     bool echo = Global::database->addCakeSold(Global::username, user->grade, user->cake->Cost(), user->cake->value);
     if(echo) {
