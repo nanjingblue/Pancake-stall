@@ -5,6 +5,7 @@
 #include <QLabel>
 #include "database.h"
 #include "customerform.h"
+#include "bossform.h"
 
 namespace Ui {
 class LoginWindow;
@@ -25,6 +26,7 @@ private:
     Ui::LoginWindow *ui;
     QLabel * message;
     CustomerForm * customer;
+    BossForm * boss;
 };
 
 #endif // LOGINWINDOW_H

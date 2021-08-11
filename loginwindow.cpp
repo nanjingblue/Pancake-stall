@@ -49,20 +49,22 @@ void LoginWindow::on_btnLoginer_clicked()
         if(Global::database->isUserExist(username, password)) {
             this->message->setText("Logining");
             // 设置当前用户 使用全局变量
-            if(username == "admin") Global::isAdmin = true;
-            else Global::isAdmin = false;
-
             Global::username = username;
             Global::password = password;
-            Global::setDiscount();
-
-            this->customer = new CustomerForm;
-            this->hide();
-            customer->show();
-
+            if(username == "admin") {
+                Global::isAdmin = true;
+                this->boss = new BossForm;
+                this->hide();
+                boss->show();
+            } else {
+                Global::isAdmin = false;
+                Global::setDiscount();
+                this->customer = new CustomerForm;
+                this->hide();
+                customer->show();
+            }
         } else {
             this->message->setText("User does not exist please register");
         }
     }
-
 }

@@ -456,5 +456,21 @@ QPushButton:hover {
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>btnBack</sender>
+   <signal>clicked()</signal>
+   <receiver>CustomerForm</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1050</x>
+     <y>669</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1066</x>
+     <y>809</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
 </ui>
