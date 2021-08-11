@@ -4,6 +4,7 @@
 #include "global.h"
 #include "cake.h"
 #include <QDebug>
+#include <QMessageBox>
 
 
 goBuyWidget::goBuyWidget(QWidget *parent) :
@@ -11,13 +12,7 @@ goBuyWidget::goBuyWidget(QWidget *parent) :
     ui(new Ui::goBuyWidget)
 {
     ui->setupUi(this);
-    this->user = new QCustomer(Global::username, Global::password);
-    this->cake = new Cake;
-    // 为菜单设置属性
-    this->initCheckBoxProp();
-    this->initCheckBoxConn();
-    this->initLabelVipInfo();
-     ui->OriginalCake->setChecked(true); // Default QriginalCake
+    this->initObject();
 }
 
 goBuyWidget::~goBuyWidget()
@@ -67,6 +62,30 @@ void goBuyWidget::initLabelVipInfo()
     } else if(echo == 3) {
         ui->labelVipInfo->setText("普通月卡会员，享受 9 折优惠");
     }
+}
+
+void goBuyWidget::initObject()
+{
+    this->user = new QCustomer(Global::username, Global::password);
+    this->cake = new Cake;
+    // 为菜单设置属性
+    this->initCheckBoxProp();
+    this->initCheckBoxConn();
+    this->initLabelVipInfo();
+     ui->OriginalCake->setChecked(true); // Default QriginalCake
+}
+
+void goBuyWidget::clearCheckBox()
+{
+    ui->OriginalCake->setChecked(false);
+    ui->Sauce->setChecked(false);
+    ui->Cilantro->setChecked(false);
+    ui->Egg->setChecked(false);
+    ui->Crispbread->setChecked(false);
+    ui->Ham->setChecked(false);
+    ui->Potato->setChecked(false);
+    ui->Loin->setChecked(false);
+    ui->Youtiao->setChecked(false);
 }
 
 void goBuyWidget::onCheckBoxPicked()
@@ -149,9 +168,14 @@ void goBuyWidget::onBtnGoBuyClicked()
     bool echo = Global::database->addCakeSold(Global::username, user->grade, user->cake->Cost(), user->cake->value);
     if(echo) {
         qDebug() << "Cake购买成功";
+        QMessageBox::information(this, "GOBUY", "购买成功");
     } else {
         qDebug() << "Cake购买失败";
+        QMessageBox::information(this, "GOBUY", "购买失败");
     }
+    this->clearCheckBox();
+    this->cake->setC_Cost(0);
+    ui->label->setText("0");
 }
 
 

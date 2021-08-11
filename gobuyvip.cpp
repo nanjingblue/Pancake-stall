@@ -1,5 +1,6 @@
 #include "gobuyvip.h"
 #include "ui_gobuyvip.h"
+#include "gobuywidget.h"
 #include <QDebug>
 #include <QMessageBox>
 

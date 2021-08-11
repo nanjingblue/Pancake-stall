@@ -19,11 +19,8 @@ public:
     ~LoginWindow();
 
 private slots:
-
     void on_btnRegister_clicked();
-
     void on_btnLoginer_clicked();
-
 private:
     Ui::LoginWindow *ui;
     QLabel * message;

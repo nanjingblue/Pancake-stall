@@ -16,15 +16,15 @@ public:
     static float discount;
     static int grade;
     // 配料
-    static int QriginalCake;
-    static int Sauce;
-    static int Cilantro;
-    static int Egg;
-    static int Crispbread;
-    static int Ham;
-    static int Potato;
-    static int Youtiao;
-    static int Loin;
+    static float QriginalCake;
+    static float Sauce;
+    static float Cilantro;
+    static float Egg;
+    static float Crispbread;
+    static float Ham;
+    static float Potato;
+    static float Youtiao;
+    static float Loin;
 
     static void setDiscount();
 

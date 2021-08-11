@@ -33,12 +33,12 @@ float Global::discount = 1;
 int Global::grade =0;
 
 // 配料
-int Global::QriginalCake = 3;
-int Global::Sauce = 0;
-int Global::Cilantro = 0;
-int Global::Egg = 1;
-int Global::Crispbread = 1;
-int Global::Ham = 1;
-int Global::Potato = 1;
-int Global::Youtiao = 1;
-int Global::Loin = 1;
+float Global::QriginalCake = 3.00;
+float Global::Sauce = 0;
+float Global::Cilantro = 0;
+float Global::Egg = 1.00;
+float Global::Crispbread = 1.00;
+float Global::Ham = 1.00;
+float Global::Potato = 1.00;
+float Global::Youtiao = 1.00;
+float Global::Loin = 1.00;

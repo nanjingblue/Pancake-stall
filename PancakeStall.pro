@@ -17,6 +17,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     bossform.cpp \
+    bossprimewidget.cpp \
     cake.cpp \
     customerform.cpp \
     database.cpp \
@@ -34,6 +35,7 @@ SOURCES += \
 
 HEADERS += \
     bossform.h \
+    bossprimewidget.h \
     cake.h \
     customerform.h \
     database.h \
@@ -50,6 +52,7 @@ HEADERS += \
 
 FORMS += \
     bossform.ui \
+    bossprimewidget.ui \
     customerform.ui \
     gobuyvip.ui \
     gobuywidget.ui \

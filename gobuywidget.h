@@ -19,6 +19,8 @@ public:
     void initCheckBoxProp();
     void initCheckBoxConn();
     void initLabelVipInfo();
+    void initObject();
+    void clearCheckBox();
 signals:
     void checkBoxPicked();
 
@@ -26,7 +28,6 @@ private slots:
     void onCheckBoxPicked();
     void onCostChanged();
     void onBtnGoBuyClicked();
-
 
 private:
     Ui::goBuyWidget *ui;

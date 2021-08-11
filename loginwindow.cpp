@@ -57,7 +57,7 @@ void LoginWindow::on_btnLoginer_clicked()
             Global::setDiscount();
 
             this->customer = new CustomerForm;
-            this->close();
+            this->hide();
             customer->show();
 
         } else {

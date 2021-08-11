@@ -31,10 +31,12 @@ void CustomerForm::initBtnConn()
     connect(ui->btnHome, SIGNAL(clicked()), this, SLOT(onBtnHome()));
     connect(ui->btnVip, SIGNAL(clicked()), this, SLOT(onBtnVip()));
     connect(ui->btnComment, SIGNAL(clicked()), this, SLOT(onBtnComment()));
+
 }
 
 void CustomerForm::onBtnHome()
 {
+    this->goBuyPage->initLabelVipInfo();
     ui->stackedWidget->setCurrentWidget(this->goBuyPage);
 }
 
