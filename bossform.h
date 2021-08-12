@@ -1,6 +1,7 @@
 #ifndef BOSSFORM_H
 #define BOSSFORM_H
 
+#include "bossgobuy.h"
 #include <QWidget>
 
 namespace Ui {
@@ -17,6 +18,7 @@ public:
 
 private:
     Ui::BossForm *ui;
+    BossGoBuy * bossGoBuyPage;
 };
 
 #endif // BOSSFORM_H

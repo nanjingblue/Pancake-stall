@@ -7,6 +7,10 @@ BossForm::BossForm(QWidget *parent) :
 {
     ui->setupUi(this);
     this->setWindowFlags(Qt::FramelessWindowHint);
+
+    this->bossGoBuyPage = new BossGoBuy;
+    ui->stackedWidget->addWidget(bossGoBuyPage);
+    ui->stackedWidget->setCurrentWidget(bossGoBuyPage);
 }
 
 BossForm::~BossForm()
