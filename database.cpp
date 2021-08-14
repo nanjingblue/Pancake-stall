@@ -193,3 +193,26 @@ bool Database::addComment(QString username, QString comment)
         return false;
     }
 }
+
+double Database::getSales()
+{
+    double value = 0;
+    QString cmd1 = "SELECT SUM(CAKEPRICE) FROM SOLDINFO";
+    QString cmd2 = "SELECT SUM(VIPPRICE) FROM SOLDINFO";
+    QSqlQuery query;
+    if(query.exec(cmd1) && query.first()) {
+        value = query.value(0).toDouble();
+        qDebug() << "Sum CAKEPRICE sc";
+    } else {
+        qDebug() << "Sum CAKEPRICE fail";
+        return -1;
+    }
+    if(query.exec(cmd2) && query.first()) {
+        value += query.value(0).toDouble();
+        qDebug() << "Get Sales Suc";
+        return  value;
+    } else {
+        qDebug() << "Get Sales fail";
+        return -1;
+    }
+}

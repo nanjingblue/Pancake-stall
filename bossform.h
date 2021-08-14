@@ -1,6 +1,7 @@
 #ifndef BOSSFORM_H
 #define BOSSFORM_H
 
+#include "bossprimewidget.h"
 #include "bossgobuy.h"
 #include <QWidget>
 
@@ -16,8 +17,15 @@ public:
     explicit BossForm(QWidget *parent = nullptr);
     ~BossForm();
 
+    void initConn();
+
+private slots:
+    void onBtnHomeClicked();
+    void onBtnBuyClicked();
+
 private:
     Ui::BossForm *ui;
+    BossPrimeWidget * bossHomePage;
     BossGoBuy * bossGoBuyPage;
 };
 

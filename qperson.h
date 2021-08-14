@@ -17,8 +17,13 @@ protected:
     int m_cost = 0;
 
 public:
+    // customer
      Cake * cake;
      int grade;
+     // boss
+     double materialcosts = 0;
+     double sales = 0;
+     double profits = 0;
 };
 
 #endif // QPERSON_H

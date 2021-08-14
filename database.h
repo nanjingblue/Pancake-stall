@@ -19,6 +19,7 @@ public:
     bool addCakeSold(QString username, int vipGrade, float cakePrice, int value[]);
     bool addVipSold(QString username, int vipGrade, int vipPrice);
     bool addComment(QString username, QString comment);
+    double getSales();
 
 private:
 

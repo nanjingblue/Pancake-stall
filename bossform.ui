@@ -346,7 +346,7 @@ QPushButton:hover {
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="btnVip">
+       <widget class="QPushButton" name="btnSold">
         <property name="minimumSize">
          <size>
           <width>0</width>
@@ -362,7 +362,7 @@ QPushButton:hover {
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="btnComment">
+       <widget class="QPushButton" name="btnBuy">
         <property name="minimumSize">
          <size>
           <width>0</width>
@@ -378,7 +378,7 @@ QPushButton:hover {
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="btnBack">
+       <widget class="QPushButton" name="btnComment">
         <property name="minimumSize">
          <size>
           <width>0</width>
@@ -389,7 +389,7 @@ QPushButton:hover {
          <string notr="true">font: 24pt &quot;宋体&quot;;</string>
         </property>
         <property name="text">
-         <string>退出</string>
+         <string>查看评价</string>
         </property>
        </widget>
       </item>

@@ -34,14 +34,23 @@ void BossGoBuy::setCost(double value)
 void BossGoBuy::initSpinBoxProp()
 {
     ui->OriginalCakeSpinBox->setProperty("isOriginalCake", true);
+    ui->OriginalCakeSpinBox->setMaximum(9999);
     ui->SauceSpinBox->setProperty("isSauce", true);
+    ui->SauceSpinBox->setMaximum(9999);
     ui->CilantroSpinBox->setProperty("isCilantro", true);
+    ui->CilantroSpinBox->setMaximum(9999);
     ui->EggSpinBox->setProperty("isEgg", true);
+    ui->EggSpinBox->setMaximum(9999);
     ui->CrispbreadSpinBox->setProperty("isCrispbread", true);
+    ui->CrispbreadSpinBox->setMaximum(9999);
     ui->HamSpinBox->setProperty("isHam", true);
+    ui->HamSpinBox->setMaximum(9999);
     ui->PotatoSpinBox->setProperty("isPotato", true);
+    ui->PotatoSpinBox->setMaximum(9999);
     ui->LoinSpinBox->setProperty("isLoin", true);
+    ui->LoinSpinBox->setMaximum(9999);
     ui->YoutiaoSpinBox->setProperty("isYoutiao", true);
+    ui->YoutiaoSpinBox->setMaximum(9999);
 }
 
 void BossGoBuy::initSpinBoxConn()
