@@ -30,6 +30,7 @@ QString Global::username = "";
 QString Global::password = "";
 Database * Global::database = new Database;
 float Global::discount = 1;
+double Global::bossDiscount = 0.5;
 int Global::grade =0;
 
 // 配料

@@ -1,6 +1,7 @@
 #include "bossgobuy.h"
 #include "ui_bossgobuy.h"
 #include "global.h"
+#include <QMessageBox>
 
 BossGoBuy::BossGoBuy(QWidget *parent) :
     QWidget(parent),
@@ -8,7 +9,7 @@ BossGoBuy::BossGoBuy(QWidget *parent) :
 {
     ui->setupUi(this);
     this->initSpinBoxProp();
-    this->initSpinBoxConn();
+    this->initConn();
 }
 
 BossGoBuy::~BossGoBuy()
@@ -53,8 +54,10 @@ void BossGoBuy::initSpinBoxProp()
     ui->YoutiaoSpinBox->setMaximum(9999);
 }
 
-void BossGoBuy::initSpinBoxConn()
+void BossGoBuy::initConn()
 {
+    connect(ui->btnGoBuy, SIGNAL(clicked()), this, SLOT(onBtnBossGoBuyClicked()));
+
     connect(this, SIGNAL(CostChanged(double)), this, SLOT(onCostChanged(double)));
     connect(ui->OriginalCakeSpinBox, SIGNAL(valueChanged(int)), this, SLOT(onSpinBoxSet()));
     connect(ui->SauceSpinBox, SIGNAL(valueChanged(int)), this, SLOT(onSpinBoxSet()));
@@ -71,31 +74,40 @@ void BossGoBuy::onSpinBoxSet()
 {
     QSpinBox *spinbox = qobject_cast<QSpinBox *>(sender());
     if(spinbox->property("isOriginalCake").toBool()) {
-        this->value[1] = spinbox->text().toInt() * Global::QriginalCake;
+        this->value[1] = spinbox->text().toDouble() * Global::QriginalCake;
+        this->num[1] = spinbox->text().toInt();
         this->setCost(value[1]);
     } else if(spinbox->property("isSauce").toBool()) {
-        this->value[2] = spinbox->text().toInt() * Global::Sauce;
+        this->value[2] = spinbox->text().toDouble() * Global::Sauce;
+        this->num[2] = spinbox->text().toInt();
         this->setCost(value[2]);
     } else if(spinbox->property("isCilantro").toBool()) {
-        this->value[3] = spinbox->text().toInt() * Global::Cilantro;
+        this->value[3] = spinbox->text().toDouble() * Global::Cilantro;
+        this->num[3] = spinbox->text().toInt();
         this->setCost(value[3]);
     } else if(spinbox->property("isEgg").toBool()) {
-        this->value[4] = spinbox->text().toInt() * Global::Egg;
+        this->value[4] = spinbox->text().toDouble() * Global::Egg;
+        this->num[4] = spinbox->text().toInt();
         this->setCost(value[4]);
     } else if(spinbox->property("isCrispbread").toBool()) {
-        this->value[5] = spinbox->text().toInt() * Global::Crispbread;
+        this->value[5] = spinbox->text().toDouble() * Global::Crispbread;
+        this->num[5] = spinbox->text().toInt();
         this->setCost(value[5]);
     } else if(spinbox->property("isHam").toBool()) {
-        this->value[6] = spinbox->text().toInt() * Global::Ham;
+        this->value[6] = spinbox->text().toDouble() * Global::Ham;
+        this->num[6] = spinbox->text().toInt();
         this->setCost(value[6]);
     } else if(spinbox->property("isPotato").toBool()) {
-        this->value[7] = spinbox->text().toInt() * Global::Potato;
+        this->value[7] = spinbox->text().toDouble() * Global::Potato;
+        this->num[7] = spinbox->text().toInt();
         this->setCost(value[7]);
     } else if(spinbox->property("isLoin").toBool()) {
-        this->value[8] = spinbox->text().toInt() * Global::Loin;
+        this->value[8] = spinbox->text().toDouble() * Global::Loin;
+        this->num[8] = spinbox->text().toInt();
         this->setCost(value[8]);
     } else if(spinbox->property("isYoutiao").toBool()) {
-        this->value[9] = spinbox->text().toInt() * Global::Youtiao;
+        this->value[9] = spinbox->text().toDouble() * Global::Youtiao;
+        this->num[9] = spinbox->text().toInt();
         this->setCost(value[9]);
     }
 }
@@ -103,5 +115,15 @@ void BossGoBuy::onSpinBoxSet()
 void BossGoBuy::onCostChanged(double value)
 {
     Q_UNUSED(value);
-    ui->labelMoney->setText(QString::asprintf("%.2lf", this->materialsCost));
+    ui->labelMoney->setText(QString::asprintf("%.2lf", this->materialsCost*Global::bossDiscount));
+}
+
+void BossGoBuy::onBtnBossGoBuyClicked()
+{
+    bool echo = Global::database->addBossBuy(this->materialsCost*Global::bossDiscount, this->num);
+    if(echo) {
+        QMessageBox::information(this, "BossGoBuy", "购买原料成功");
+    } else {
+        QMessageBox::information(this, "BossGoBuy", "购买原料失败");
+    }
 }

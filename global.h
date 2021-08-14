@@ -14,6 +14,7 @@ public:
     static QString password;
     static Database *database;
     static float discount;
+    static double bossDiscount;
     static int grade;
     // 配料
     static float QriginalCake;

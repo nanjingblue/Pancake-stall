@@ -19,6 +19,8 @@ Database::Database(QObject *parent) : QObject(parent)
     this->initSoldInfoTable();
     // 初始化评论表
     this->initCommentInfoTable();
+    // 初始化 BossBuy
+    this->initBossBuyInfoTable();
 }
 
 void Database::initUserInfoTable()
@@ -79,6 +81,31 @@ void Database::initCommentInfoTable()
         qDebug() << "CommrntInfoTable suc";
     } else {
         qDebug() << "CommentInfoTable fail";
+    }
+}
+
+void Database::initBossBuyInfoTable()
+{
+    QString cmd = "CREATE TABLE IF NOT EXISTS BOSSBUYINFO(\
+            ID                 INTEGER primary key  AUTOINCREMENT,\
+            USERNAME           VARCHAR(64)    NOT NULL,\
+            PRICE                INT    DEFAULT 0,\
+            ORIGINCAKE           INT    DEFAULT 0,\
+            SAUCE                INT    DEFAULT 0,\
+            CILANTRO             INT    DEFAULT 0,\
+            EGG                  INT    DEFAULT 0,\
+            CRISPBREAD           INT    DEFAULT 0,\
+            HAM                  INT    DEFAULT 0,\
+            POTATO               INT    DEFAULT 0,\
+            LOIN                 INT    DEFAULT 0,\
+            YOUTIAO              INT    DEFAULT 0,\
+            SOLDDATE             timestamp default (datetime('now','localtime'))\
+            )";
+    QSqlQuery query;
+    if(query.exec(cmd)) {
+        qDebug() << "BossBuyInfo suc";
+    } else {
+        qDebug() << "BossBuyInfo fail";
     }
 }
 
@@ -190,6 +217,21 @@ bool Database::addComment(QString username, QString comment)
        return true;
     } else {
         qDebug() << "评论记录添加失败";
+        return false;
+    }
+}
+
+bool Database::addBossBuy(double price, int value[])
+{
+    QString cmd = QString("INSERT INTO BOSSBUYINFO (ID,USERNAME,PRICE,ORIGINCAKE,SAUCE,CILANTRO,EGG,CRISPBREAD,HAM,POTATO,LOIN,YOUTIAO)VALUES(NULL, \"admin\", %1,%2,%3,%4,%5,%6,%7,%8,%9,%10)")
+                                        .arg(price).arg(value[1]).arg(value[2]).arg(value[3]).arg(value[4]).arg(value[5]).arg(value[6])
+                                        .arg(value[7]).arg(value[8]).arg(value[9]);
+    QSqlQuery query;
+    if(query.exec(cmd)) {
+        qDebug() << "BossBuy 添加记录成功";
+        return true;
+    } else {
+        qDebug() << "BossBuy 添加记录失败";
         return false;
     }
 }
