@@ -569,7 +569,7 @@
               </rect>
              </property>
             </widget>
-            <widget class="QLineEdit" name="CrispvreadHave">
+            <widget class="QLineEdit" name="CrispbreadHave">
              <property name="geometry">
               <rect>
                <x>140</x>

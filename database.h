@@ -1,6 +1,7 @@
 #ifndef DATABASE_H
 #define DATABASE_H
 
+#include "goods.h"
 #include <QObject>
 #include <QSqlQuery>
 
@@ -23,6 +24,7 @@ public:
     bool addBossBuy(double price, int value[]);
     double getSales();
     double getMaterialCosts();
+    void  getSoldInfo(goods *value);
 
 private:
 

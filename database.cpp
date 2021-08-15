@@ -21,8 +21,6 @@ Database::Database(QObject *parent) : QObject(parent)
     this->initCommentInfoTable();
     // 初始化 BossBuy
     this->initBossBuyInfoTable();
-
-    this->value = new goods[10];
 }
 
 void Database::initUserInfoTable()
@@ -274,23 +272,22 @@ double Database::getMaterialCosts()
     }
 }
 
-goods *Database::getSoldInfo()
+void Database::getSoldInfo(goods *value)
 {
     QSqlQuery query;
     QString goodsName[10] = {
-        "", "OriginCake", "Sauce", "Cilantro", "Egg", "Crispbread", "Ham", "Potato", "Loin", "Youtiao"
+        "", "ORIGINCAKE", "SAUCE", "CILANTRO", "EGG", "CRISPBREAD", "HAM", "POTATO", "LOIN", "YOUTIAO"
     };
     QString tableName[3] = {
         "", "SOLDINFO", "BOSSBUYINFO"
     };
     for(int i=1; i<=9; ++i) {
         for(int j=1; j<=2; ++j){
-            QString cmd = QString("SELECT SUM('%1') FROM '%2'").arg(goodsName[i]).arg(tableName[j]);
+            QString cmd = QString("SELECT SUM(%1) FROM %2").arg(goodsName[i]).arg(tableName[j]);
             if(query.exec(cmd) && query.first()) {
-                if(j==1) this->value[i].Sales = query.value(0).toInt();
-                else this->value[i].Inventory =query.value(0).toInt();
+                if(j==1) value[i].Sales = query.value(0).toInt();
+                else value[i].Inventory =query.value(0).toInt() - value[i].Sales;
             }
         }
     }
-    return this->value;
 }

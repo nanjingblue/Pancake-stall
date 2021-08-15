@@ -3,9 +3,9 @@
 
 #include <QObject>
 
-struct Goods {
-    int Sales;
-    int Inventory;
+struct goods {
+    int Sales = 0;
+    int Inventory = 0;
 };
 
 class Goods : public QObject
