@@ -27,6 +27,7 @@ SOURCES += \
     gobuyvip.cpp \
     gobuywidget.cpp \
     gocomment.cpp \
+    goods.cpp \
     loginwindow.cpp \
     main.cpp \
     qboss.cpp \
@@ -46,6 +47,7 @@ HEADERS += \
     gobuyvip.h \
     gobuywidget.h \
     gocomment.h \
+    goods.h \
     loginwindow.h \
     qboss.h \
     qcustomer.h \

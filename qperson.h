@@ -21,7 +21,7 @@ public:
      Cake * cake;
      int grade;
      // boss
-     double materialcosts = 0;
+     double materialCosts = 0;
      double sales = 0;
      double profits = 0;
 };

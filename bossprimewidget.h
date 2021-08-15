@@ -14,6 +14,7 @@ class BossPrimeWidget : public QWidget
 public:
     explicit BossPrimeWidget(QWidget *parent = nullptr);
     ~BossPrimeWidget();
+    void initLableMoney();
 
 private:
     Ui::BossPrimeWidget *ui;
