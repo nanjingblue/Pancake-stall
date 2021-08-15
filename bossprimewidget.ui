@@ -486,6 +486,12 @@
                <height>51</height>
               </rect>
              </property>
+             <property name="styleSheet">
+              <string notr="true">font: 75 14pt &quot;Comic Sans MS&quot;;</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
             </widget>
             <widget class="QLineEdit" name="PotatoHave">
              <property name="geometry">
@@ -495,6 +501,12 @@
                <width>101</width>
                <height>51</height>
               </rect>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">font: 75 14pt &quot;Comic Sans MS&quot;;</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
              </property>
             </widget>
             <widget class="QLineEdit" name="LoinSales">
@@ -506,6 +518,12 @@
                <height>51</height>
               </rect>
              </property>
+             <property name="styleSheet">
+              <string notr="true">font: 75 14pt &quot;Comic Sans MS&quot;;</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
             </widget>
             <widget class="QLineEdit" name="LoinHave">
              <property name="geometry">
@@ -515,6 +533,12 @@
                <width>101</width>
                <height>51</height>
               </rect>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">font: 75 14pt &quot;Comic Sans MS&quot;;</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
              </property>
             </widget>
             <widget class="QLineEdit" name="SauceHave">
@@ -558,6 +582,9 @@
                <height>51</height>
               </rect>
              </property>
+             <property name="styleSheet">
+              <string notr="true">font: 75 14pt &quot;Comic Sans MS&quot;;</string>
+             </property>
             </widget>
             <widget class="QLineEdit" name="CrispbreadSales">
              <property name="geometry">
@@ -567,6 +594,12 @@
                <width>101</width>
                <height>51</height>
               </rect>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">font: 75 14pt &quot;Comic Sans MS&quot;;</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
              </property>
             </widget>
             <widget class="QLineEdit" name="CrispbreadHave">
@@ -578,6 +611,12 @@
                <height>51</height>
               </rect>
              </property>
+             <property name="styleSheet">
+              <string notr="true">font: 75 14pt &quot;Comic Sans MS&quot;;</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
             </widget>
             <widget class="QLineEdit" name="YoutiaoSales">
              <property name="geometry">
@@ -587,6 +626,12 @@
                <width>101</width>
                <height>51</height>
               </rect>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">font: 75 14pt &quot;Comic Sans MS&quot;;</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
              </property>
             </widget>
             <widget class="QLineEdit" name="YoutiaoHave">
@@ -598,6 +643,12 @@
                <height>51</height>
               </rect>
              </property>
+             <property name="styleSheet">
+              <string notr="true">font: 75 14pt &quot;Comic Sans MS&quot;;</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
             </widget>
             <widget class="QLineEdit" name="CilantroHave">
              <property name="geometry">
@@ -607,6 +658,9 @@
                <width>101</width>
                <height>51</height>
               </rect>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">font: 75 14pt &quot;Comic Sans MS&quot;;</string>
              </property>
             </widget>
            </widget>

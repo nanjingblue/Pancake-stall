@@ -10,8 +10,10 @@ BossForm::BossForm(QWidget *parent) :
     this->initConn();
 
     this->bossHomePage = new BossPrimeWidget;
+    this->soldDetailsPage = new BossSoldDetails;
     this->bossGoBuyPage = new BossGoBuy;
     ui->stackedWidget->addWidget(bossHomePage);
+    ui->stackedWidget->addWidget(soldDetailsPage);
     ui->stackedWidget->addWidget(bossGoBuyPage);
     ui->stackedWidget->setCurrentWidget(bossHomePage);
 }
@@ -25,6 +27,7 @@ void BossForm::initConn()
 {
     connect(ui->btnHome, SIGNAL(clicked()), this, SLOT(onBtnHomeClicked()));
     connect(ui->btnBuy, SIGNAL(clicked()), this, SLOT(onBtnBuyClicked()));
+    connect(ui->btnSoldDetails, SIGNAL(clicked()), this, SLOT(onBtnSoldDetailsClicked()));
 }
 
 void BossForm::onBtnHomeClicked()
@@ -35,4 +38,9 @@ void BossForm::onBtnHomeClicked()
 void BossForm::onBtnBuyClicked()
 {
     ui->stackedWidget->setCurrentWidget(this->bossGoBuyPage);
+}
+
+void BossForm::onBtnSoldDetailsClicked()
+{
+    ui->stackedWidget->setCurrentWidget(this->soldDetailsPage);
 }

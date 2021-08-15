@@ -19,6 +19,7 @@ SOURCES += \
     bossform.cpp \
     bossgobuy.cpp \
     bossprimewidget.cpp \
+    bosssolddetails.cpp \
     cake.cpp \
     customerform.cpp \
     database.cpp \
@@ -39,6 +40,7 @@ HEADERS += \
     bossform.h \
     bossgobuy.h \
     bossprimewidget.h \
+    bosssolddetails.h \
     cake.h \
     customerform.h \
     database.h \
@@ -58,6 +60,7 @@ FORMS += \
     bossform.ui \
     bossgobuy.ui \
     bossprimewidget.ui \
+    bosssolddetails.ui \
     customerform.ui \
     gobuyvip.ui \
     gobuywidget.ui \

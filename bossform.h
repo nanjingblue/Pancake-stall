@@ -3,6 +3,7 @@
 
 #include "bossprimewidget.h"
 #include "bossgobuy.h"
+#include "bosssolddetails.h"
 #include <QWidget>
 
 namespace Ui {
@@ -22,11 +23,13 @@ public:
 private slots:
     void onBtnHomeClicked();
     void onBtnBuyClicked();
+    void onBtnSoldDetailsClicked();
 
 private:
     Ui::BossForm *ui;
     BossPrimeWidget * bossHomePage;
     BossGoBuy * bossGoBuyPage;
+    BossSoldDetails * soldDetailsPage;
 };
 
 #endif // BOSSFORM_H
