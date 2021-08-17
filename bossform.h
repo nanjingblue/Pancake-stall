@@ -4,6 +4,7 @@
 #include "bossprimewidget.h"
 #include "bossgobuy.h"
 #include "bosssolddetails.h"
+#include "showcomment.h"
 #include <QWidget>
 
 namespace Ui {
@@ -24,12 +25,14 @@ private slots:
     void onBtnHomeClicked();
     void onBtnBuyClicked();
     void onBtnSoldDetailsClicked();
+    void onBtnCommentClicked();
 
 private:
     Ui::BossForm *ui;
     BossPrimeWidget * bossHomePage;
     BossGoBuy * bossGoBuyPage;
     BossSoldDetails * soldDetailsPage;
+    ShowComment * commentPage;
 };
 
 #endif // BOSSFORM_H

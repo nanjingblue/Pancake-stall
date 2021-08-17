@@ -34,6 +34,7 @@ SOURCES += \
     qboss.cpp \
     qcustomer.cpp \
     qperson.cpp \
+    showcomment.cpp \
     welcomewidget.cpp
 
 HEADERS += \
@@ -54,6 +55,7 @@ HEADERS += \
     qboss.h \
     qcustomer.h \
     qperson.h \
+    showcomment.h \
     welcomewidget.h
 
 FORMS += \
@@ -66,6 +68,7 @@ FORMS += \
     gobuywidget.ui \
     gocomment.ui \
     loginwindow.ui \
+    showcomment.ui \
     welcomewidget.ui
 
 # Default rules for deployment.
