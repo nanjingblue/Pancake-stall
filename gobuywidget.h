@@ -3,6 +3,7 @@
 
 #include "qperson.h"
 #include "cake.h"
+#include "goods.h"
 #include <QWidget>
 
 namespace Ui {
@@ -33,6 +34,7 @@ private:
     Ui::goBuyWidget *ui;
     QPerson *user;
     Cake * cake;
+    goods * value;
 
 public:
     bool isAdmin;

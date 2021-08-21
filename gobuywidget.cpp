@@ -13,6 +13,8 @@ goBuyWidget::goBuyWidget(QWidget *parent) :
 {
     ui->setupUi(this);
     this->initObject();
+    this->value = new goods[10];
+    Global::database->getSoldInfo(value);
 }
 
 goBuyWidget::~goBuyWidget()
@@ -20,6 +22,7 @@ goBuyWidget::~goBuyWidget()
     delete ui;
     delete this->cake;
     delete this->user;
+    delete [] value;
 }
 
 void goBuyWidget::initCheckBoxProp()
@@ -38,15 +41,15 @@ void goBuyWidget::initCheckBoxProp()
 void goBuyWidget::initCheckBoxConn()
 {
     connect(this->cake, &Cake::CostChanged, this, &goBuyWidget::onCostChanged);
-    connect(ui->OriginalCake, SIGNAL(stateChanged(int)), this, SLOT(onCheckBoxPicked()));
-    connect(ui->Sauce, SIGNAL(stateChanged(int)), this, SLOT(onCheckBoxPicked()));
-    connect(ui->Egg, SIGNAL(stateChanged(int)), this, SLOT(onCheckBoxPicked()));
-    connect(ui->Cilantro, SIGNAL(stateChanged(int)), this, SLOT(onCheckBoxPicked()));
-    connect(ui->Crispbread, SIGNAL(stateChanged(int)), this, SLOT(onCheckBoxPicked()));
-    connect(ui->Ham, SIGNAL(stateChanged(int)), this, SLOT(onCheckBoxPicked()));
-    connect(ui->Potato, SIGNAL(stateChanged(int)), this, SLOT(onCheckBoxPicked()));
-    connect(ui->Loin, SIGNAL(stateChanged(int)), this, SLOT(onCheckBoxPicked()));
-    connect(ui->Youtiao, SIGNAL(stateChanged(int)), this, SLOT(onCheckBoxPicked()));
+    connect(ui->OriginalCake, SIGNAL(clicked()), this, SLOT(onCheckBoxPicked()));
+    connect(ui->Sauce, SIGNAL(clicked()), this, SLOT(onCheckBoxPicked()));
+    connect(ui->Egg, SIGNAL(clicked()), this, SLOT(onCheckBoxPicked()));
+    connect(ui->Cilantro, SIGNAL(clicked()), this, SLOT(onCheckBoxPicked()));
+    connect(ui->Crispbread, SIGNAL(clicked()), this, SLOT(onCheckBoxPicked()));
+    connect(ui->Ham, SIGNAL(clicked()), this, SLOT(onCheckBoxPicked()));
+    connect(ui->Potato, SIGNAL(clicked()), this, SLOT(onCheckBoxPicked()));
+    connect(ui->Loin, SIGNAL(clicked()), this, SLOT(onCheckBoxPicked()));
+    connect(ui->Youtiao, SIGNAL(clicked()), this, SLOT(onCheckBoxPicked()));
     connect(ui->btnGoBuy, SIGNAL(clicked()), this, SLOT(onBtnGoBuyClicked()));
 }
 
@@ -72,7 +75,7 @@ void goBuyWidget::initObject()
     this->initCheckBoxProp();
     this->initCheckBoxConn();
     this->initLabelVipInfo();
-     ui->OriginalCake->setChecked(true); // Default QriginalCake
+     //ui->OriginalCake->setChecked(true); // Default QriginalCake
 }
 
 void goBuyWidget::clearCheckBox()
@@ -94,30 +97,75 @@ void goBuyWidget::onCheckBoxPicked()
     bool status = checkBox->isChecked();
     if (status == true ) {
         if(checkBox->property("isQriginalCake").toBool()) {
+            if(value[1].Inventory < 1) {
+                QMessageBox::information(this, "GoBuyGoods", "库存不足");
+                checkBox->setChecked(false);
+                return;
+            }
             cake->setCost(Global::QriginalCake);
             cake->value[1]++;
         } else if(checkBox->property("isSauce").toBool()) {
+            if(value[2].Inventory < 1) {
+                QMessageBox::information(this, "GoBuyGoods", "库存不足");
+                checkBox->setCheckable(false);
+                return;
+            }
             cake->setCost(Global::Sauce);
             cake->value[2]++;
         } else if(checkBox->property("isEgg").toBool()) {
+            if(value[3].Inventory < 1) {
+                QMessageBox::information(this, "GoBuyGoods", "库存不足");
+                checkBox->setChecked(false);
+                return;
+            }
             cake->setCost(Global::Egg);
             cake->value[3]++;
         } else if(checkBox->property("isCilantro").toBool()) {
+            if(value[4].Inventory < 1) {
+                QMessageBox::information(this, "GoBuyGoods", "库存不足");
+                checkBox->setChecked(false);
+                return;
+            }
             cake->setCost(Global::Cilantro);
             cake->value[4]++;
         } else if(checkBox->property("isCrispbread").toBool()) {
+            if(value[5].Inventory < 1) {
+                QMessageBox::information(this, "GoBuyGoods", "库存不足");
+                checkBox->setChecked(false);
+                return;
+            }
             cake->setCost(Global::Crispbread);
             cake->value[5]++;
         } else if(checkBox->property("isHam").toBool()) {
+            if(value[6].Inventory < 1) {
+                QMessageBox::information(this, "GoBuyGoods", "库存不足");
+                checkBox->setChecked(false);
+                return;
+            }
             cake->setCost(Global::Ham);
             cake->value[6]++;
         } else if(checkBox->property("isPotato").toBool()) {
+            if(value[7].Inventory < 1) {
+                QMessageBox::information(this, "GoBuyGoods", "库存不足");
+                checkBox->setChecked(false);
+                return;
+            }
             cake->setCost(Global::Potato);
             cake->value[7]++;
         } else if(checkBox->property("isLoin").toBool()) {
+            if(value[8].Inventory < 1) {
+                QMessageBox::information(this, "GoBuyGoods", "库存不足");
+                checkBox->setChecked(false);
+                return;
+            }
             cake->setCost(Global::Loin);
             cake->value[8]++;
         } else if(checkBox->property("isYoutiao").toBool()) {
+            if(value[9].Inventory < 1) {
+                QMessageBox::information(this, "GoBuyGoods", "库存不足");
+                checkBox->setChecked(false);
+                return;
+            }
             cake->setCost(Global::Youtiao);
             cake->value[9]++;
         }

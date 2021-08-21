@@ -17,6 +17,7 @@ BossPrimeWidget::BossPrimeWidget(QWidget *parent) :
 BossPrimeWidget::~BossPrimeWidget()
 {
     delete ui;
+    delete []value;
 }
 
 void BossPrimeWidget::initLableMoney()
