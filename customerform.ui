@@ -373,12 +373,12 @@ QPushButton:hover {
          <string notr="true">font: 24pt &quot;宋体&quot;;</string>
         </property>
         <property name="text">
-         <string>评价</string>
+         <string>去评价</string>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="btnBack">
+       <widget class="QPushButton" name="btnShowComment">
         <property name="minimumSize">
          <size>
           <width>0</width>
@@ -389,7 +389,7 @@ QPushButton:hover {
          <string notr="true">font: 24pt &quot;宋体&quot;;</string>
         </property>
         <property name="text">
-         <string>退出</string>
+         <string>看评价</string>
         </property>
        </widget>
       </item>
@@ -453,22 +453,6 @@ QPushButton:hover {
     <hint type="destinationlabel">
      <x>1137</x>
      <y>-50</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>btnBack</sender>
-   <signal>clicked()</signal>
-   <receiver>CustomerForm</receiver>
-   <slot>close()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>1050</x>
-     <y>669</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>1066</x>
-     <y>809</y>
     </hint>
    </hints>
   </connection>

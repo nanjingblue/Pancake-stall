@@ -26,7 +26,6 @@ private slots:
     void onBtnBuyClicked();
     void onBtnSoldDetailsClicked();
     void onBtnCommentClicked();
-
 private:
     Ui::BossForm *ui;
     BossPrimeWidget * bossHomePage;

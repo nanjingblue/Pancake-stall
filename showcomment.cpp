@@ -9,11 +9,13 @@ ShowComment::ShowComment(QWidget *parent) :
     ui->setupUi(this);
     this->model = new QSqlQueryModel(ui->tableShowComment);
     this->initTableShowComment();
+    connect(ui->btnCloseComment, SIGNAL(clicked()), this, SLOT(onBtnCloseClicked()));
 }
 
 ShowComment::~ShowComment()
 {
     delete ui;
+    delete model;
 }
 
 void ShowComment::initTableShowComment()
@@ -38,4 +40,9 @@ void ShowComment::initTableShowComment()
     // 设置自适应列宽
 //ui->tableShowComment->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
     ui->tableShowComment->setSelectionBehavior(QAbstractItemView::SelectRows); // 选中时整行选中
+}
+
+void ShowComment::onBtnCloseClicked()
+{
+    exit(1);
 }

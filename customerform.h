@@ -4,6 +4,7 @@
 #include "gobuywidget.h"
 #include "gobuyvip.h"
 #include "gocomment.h"
+#include "showcomment.h"
 #include <QWidget>
 
 namespace Ui {
@@ -23,12 +24,13 @@ public slots:
     void onBtnHome();
     void onBtnVip();
     void onBtnComment();
-//    void onBtnBack();
+    void onBtnShowComment();
 private:
     Ui::CustomerForm *ui;
     goBuyWidget * goBuyPage;
     GoBuyVip *goBuyVip;
     GoComment * comment;
+    ShowComment * showCommentPage;
 
 };
 

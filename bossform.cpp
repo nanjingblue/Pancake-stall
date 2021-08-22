@@ -23,6 +23,10 @@ BossForm::BossForm(QWidget *parent) :
 BossForm::~BossForm()
 {
     delete ui;
+    delete bossHomePage;
+    delete soldDetailsPage;
+    delete bossGoBuyPage;
+    delete commentPage;
 }
 
 void BossForm::initConn()
@@ -52,3 +56,4 @@ void BossForm::onBtnCommentClicked()
 {
     ui->stackedWidget->setCurrentWidget(this->commentPage);
 }
+

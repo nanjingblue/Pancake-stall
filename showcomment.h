@@ -17,6 +17,8 @@ public:
     ~ShowComment();
     void initTableShowComment();
 
+public slots:
+    void onBtnCloseClicked();
 private:
     Ui::ShowComment *ui;
     QSqlQueryModel * model;

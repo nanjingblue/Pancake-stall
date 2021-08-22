@@ -15,6 +15,7 @@ BossSoldDetails::BossSoldDetails(QWidget *parent) :
 BossSoldDetails::~BossSoldDetails()
 {
     delete ui;
+    delete model;
 }
 
 void BossSoldDetails::initTableSlodDetails()
@@ -28,9 +29,15 @@ void BossSoldDetails::initTableSlodDetails()
 
     ui->tableSoldDetails->setModel(model);
     ui->tableSoldDetails->verticalHeader()->setDefaultSectionSize(50);
+    //设置列宽不可变动，即不能通过鼠标拖动增加列宽
+    ui->tableSoldDetails->horizontalHeader()->setSectionResizeMode(QHeaderView::Fixed);
+    // 设置隔行变色
+    ui->tableSoldDetails->setAlternatingRowColors(true);
+    // 设置文字居中
+    ui->tableSoldDetails->setSelectionBehavior(QAbstractItemView::SelectRows); // 选中时整行选中
     ui->tableSoldDetails->setColumnWidth(0, 220);
     ui->tableSoldDetails->setColumnWidth(1, 230);
     ui->tableSoldDetails->setColumnWidth(2, 230);
     ui->tableSoldDetails->setColumnWidth(3, 230);
-    ui->tableSoldDetails->setColumnWidth(4, 200);
+    ui->tableSoldDetails->setColumnWidth(4, 222);
 }

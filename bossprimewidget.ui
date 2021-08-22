@@ -585,6 +585,9 @@
              <property name="styleSheet">
               <string notr="true">font: 75 14pt &quot;Comic Sans MS&quot;;</string>
              </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
             </widget>
             <widget class="QLineEdit" name="CrispbreadSales">
              <property name="geometry">
@@ -661,6 +664,9 @@
              </property>
              <property name="styleSheet">
               <string notr="true">font: 75 14pt &quot;Comic Sans MS&quot;;</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
              </property>
             </widget>
            </widget>

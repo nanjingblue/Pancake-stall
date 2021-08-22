@@ -46,6 +46,22 @@
      <property name="frameShadow">
       <enum>QFrame::Raised</enum>
      </property>
+     <widget class="QPushButton" name="btnCloseComment">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>370</y>
+        <width>251</width>
+        <height>81</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 18pt &quot;宋体&quot;;</string>
+      </property>
+      <property name="text">
+       <string>退出</string>
+      </property>
+     </widget>
     </widget>
    </item>
   </layout>
