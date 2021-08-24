@@ -2,6 +2,7 @@
 #define QPERSON_H
 
 #include "cake.h"
+#include "goods.h"
 #include <QObject>
 
 class QPerson : public QObject

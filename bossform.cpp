@@ -39,6 +39,9 @@ void BossForm::initConn()
 
 void BossForm::onBtnHomeClicked()
 {
+    delete bossHomePage;
+    bossHomePage = new BossPrimeWidget;
+    ui->stackedWidget->addWidget(bossHomePage);
     ui->stackedWidget->setCurrentWidget(this->bossHomePage);
 }
 
