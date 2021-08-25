@@ -2,6 +2,7 @@
 #define BOSSPRIMEWIDGET_H
 
 #include "goods.h"
+#include "qperson.h"
 #include <QWidget>
 
 namespace Ui {
@@ -20,6 +21,7 @@ public:
 
 private:
     Ui::BossPrimeWidget *ui;
+    QPerson * user;
     goods * value;
 };
 

@@ -26,14 +26,15 @@ void LoginWindow::on_btnRegister_clicked()
         QMessageBox::information(this, "Register", "Username can't be empty");
     } else if(password=="") {
         QMessageBox::information(this, "Register", "Password can't be empty");
-    }
-    int echo = Global::database->addUser(username, password);
-    if(echo==1) {
-        QMessageBox::information(this, "Register", "User already exists, please login");
-    } else if(echo==0) {
-        QMessageBox::information(this, "Register", "User registration successful");
     } else {
-        QMessageBox::information(this, "Register", "User registration successful");
+        int echo = Global::database->addUser(username, password);
+        if(echo==1) {
+            QMessageBox::information(this, "Register", "User already exists, please login");
+        } else if(echo==0) {
+            QMessageBox::information(this, "Register", "User registration successful");
+        } else {
+            QMessageBox::information(this, "Register", "User registration successful");
+        }
     }
 }
 

@@ -25,11 +25,6 @@ public:
     double getSales();
     double getMaterialCosts();
     void  getSoldInfo(goods *value);
-
-private:
-
-signals:
-
 };
 
 #endif // DATABASE_H

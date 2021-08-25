@@ -9,6 +9,7 @@ BossPrimeWidget::BossPrimeWidget(QWidget *parent) :
     ui(new Ui::BossPrimeWidget)
 {
     ui->setupUi(this);
+    this->user = new QBoss(Global::username, Global::password);
     this->value = new goods[10];
     this->initLableMoney();
     this->initSlodInfo();
@@ -18,14 +19,15 @@ BossPrimeWidget::~BossPrimeWidget()
 {
     delete ui;
     delete []value;
+    delete user;
 }
 
 void BossPrimeWidget::initLableMoney()
 {
-    QBoss boss(Global::username, Global::password);
-    ui->labelSales->setText(QString::asprintf("%.2lf", boss.sales));
-    ui->labelMaterialCosts->setText(QString::asprintf("%.2lf", boss.materialCosts));
-    ui->labelProfits->setText(QString::asprintf("%.2lf", boss.profits));
+    QBoss user(Global::username, Global::password);
+    ui->labelSales->setText(QString::asprintf("%.2lf", user.sales));
+    ui->labelMaterialCosts->setText(QString::asprintf("%.2lf", user.materialCosts));
+    ui->labelProfits->setText(QString::asprintf("%.2lf", user.profits));
 }
 
 void BossPrimeWidget::initSlodInfo()

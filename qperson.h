@@ -10,12 +10,11 @@ class QPerson : public QObject
     Q_OBJECT
 public:
     virtual void display() const = 0;
-signals:
-
+    virtual void outputClassInfo() const = 0;
 protected:
     QString username;
     QString password;
-    int m_cost = 0;
+    double m_cost = 0;
 
 public:
     // customer

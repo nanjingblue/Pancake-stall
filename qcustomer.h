@@ -11,6 +11,7 @@ class QCustomer :public QPerson
 public:
     explicit QCustomer(QString username, QString password);
     void display() const override;
+    void outputClassInfo() const override;
     bool isVip();
 
 signals:

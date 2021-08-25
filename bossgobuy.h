@@ -28,7 +28,7 @@ public  slots:
     void onBtnBossGoBuyClicked();
 
 private:
-    Ui::BossGoBuy *ui;
+    Ui::BossGoBuy *ui; 
     double materialsCost = 0;
     double value[10] = {0};
     int num[10] = {0};

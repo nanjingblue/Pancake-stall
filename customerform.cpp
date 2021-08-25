@@ -57,5 +57,8 @@ void CustomerForm::onBtnComment()
 
 void CustomerForm::onBtnShowComment()
 {
+    delete this->showCommentPage;
+    this->showCommentPage = new ShowComment(ui->stackedWidget);
+    ui->stackedWidget->addWidget(showCommentPage);
     ui->stackedWidget->setCurrentWidget(this->showCommentPage);
 }
