@@ -78,11 +78,11 @@ void BossGoBuy::onSpinBoxSet()
         this->num[1] = spinbox->text().toInt();
         this->setCost(value[1]);
     } else if(spinbox->property("isSauce").toBool()) {
-        this->value[2] = spinbox->text().toDouble() * Global::Sauce;
+        this->value[2] = spinbox->text().toDouble() * Global::bossSauce;
         this->num[2] = spinbox->text().toInt();
         this->setCost(value[2]);
     } else if(spinbox->property("isCilantro").toBool()) {
-        this->value[3] = spinbox->text().toDouble() * Global::Cilantro;
+        this->value[3] = spinbox->text().toDouble() * Global::bossCilantro;
         this->num[3] = spinbox->text().toInt();
         this->setCost(value[3]);
     } else if(spinbox->property("isEgg").toBool()) {

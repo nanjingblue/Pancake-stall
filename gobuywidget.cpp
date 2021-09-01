@@ -98,7 +98,7 @@ void goBuyWidget::onCheckBoxPicked()
     if (status == true ) {
         if(checkBox->property("isQriginalCake").toBool()) {
             if(value[1].Inventory < 1) {
-                QMessageBox::information(this, "GoBuyGoods", "库存不足");
+                QMessageBox::information(this, "GoBuyGoods", "库存不足, 请登录店主账号购买");
                 checkBox->setChecked(false);
                 return;
             }
@@ -106,7 +106,7 @@ void goBuyWidget::onCheckBoxPicked()
             cake->value[1]++;
         } else if(checkBox->property("isSauce").toBool()) {
             if(value[2].Inventory < 1) {
-                QMessageBox::information(this, "GoBuyGoods", "库存不足");
+                QMessageBox::information(this, "GoBuyGoods", "库存不足, 请登录店主账号购买");
                 checkBox->setCheckable(false);
                 return;
             }
@@ -114,7 +114,7 @@ void goBuyWidget::onCheckBoxPicked()
             cake->value[2]++;
         } else if(checkBox->property("isEgg").toBool()) {
             if(value[3].Inventory < 1) {
-                QMessageBox::information(this, "GoBuyGoods", "库存不足");
+                QMessageBox::information(this, "GoBuyGoods", "库存不足, 请登录店主账号购买");
                 checkBox->setChecked(false);
                 return;
             }
@@ -122,7 +122,7 @@ void goBuyWidget::onCheckBoxPicked()
             cake->value[3]++;
         } else if(checkBox->property("isCilantro").toBool()) {
             if(value[4].Inventory < 1) {
-                QMessageBox::information(this, "GoBuyGoods", "库存不足");
+                QMessageBox::information(this, "GoBuyGoods", "库存不足, 请登录店主账号购买");
                 checkBox->setChecked(false);
                 return;
             }
@@ -130,7 +130,7 @@ void goBuyWidget::onCheckBoxPicked()
             cake->value[4]++;
         } else if(checkBox->property("isCrispbread").toBool()) {
             if(value[5].Inventory < 1) {
-                QMessageBox::information(this, "GoBuyGoods", "库存不足");
+                QMessageBox::information(this, "GoBuyGoods", "库存不足, 请登录店主账号购买");
                 checkBox->setChecked(false);
                 return;
             }
@@ -138,7 +138,7 @@ void goBuyWidget::onCheckBoxPicked()
             cake->value[5]++;
         } else if(checkBox->property("isHam").toBool()) {
             if(value[6].Inventory < 1) {
-                QMessageBox::information(this, "GoBuyGoods", "库存不足");
+                QMessageBox::information(this, "GoBuyGoods", "库存不足, 请登录店主账号购买");
                 checkBox->setChecked(false);
                 return;
             }
@@ -146,7 +146,7 @@ void goBuyWidget::onCheckBoxPicked()
             cake->value[6]++;
         } else if(checkBox->property("isPotato").toBool()) {
             if(value[7].Inventory < 1) {
-                QMessageBox::information(this, "GoBuyGoods", "库存不足");
+                QMessageBox::information(this, "GoBuyGoods", "库存不足, 请登录店主账号购买");
                 checkBox->setChecked(false);
                 return;
             }
@@ -154,7 +154,7 @@ void goBuyWidget::onCheckBoxPicked()
             cake->value[7]++;
         } else if(checkBox->property("isLoin").toBool()) {
             if(value[8].Inventory < 1) {
-                QMessageBox::information(this, "GoBuyGoods", "库存不足");
+                QMessageBox::information(this, "GoBuyGoods", "库存不足, 请登录店主账号购买");
                 checkBox->setChecked(false);
                 return;
             }
@@ -162,7 +162,7 @@ void goBuyWidget::onCheckBoxPicked()
             cake->value[8]++;
         } else if(checkBox->property("isYoutiao").toBool()) {
             if(value[9].Inventory < 1) {
-                QMessageBox::information(this, "GoBuyGoods", "库存不足");
+                QMessageBox::information(this, "GoBuyGoods", "库存不足, 请登录店主账号购买");
                 checkBox->setChecked(false);
                 return;
             }

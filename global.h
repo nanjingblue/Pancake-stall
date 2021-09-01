@@ -16,9 +16,10 @@ public:
     static float discount;
     static double bossDiscount;
     static int grade;
-    // 配料
     static float QriginalCake;
     static float Sauce;
+    static float bossSauce;
+    static float bossCilantro;
     static float Cilantro;
     static float Egg;
     static float Crispbread;
@@ -26,11 +27,7 @@ public:
     static float Potato;
     static float Youtiao;
     static float Loin;
-
     static void setDiscount();
-
-signals:
-
 };
 
 #endif // GLOBAL_H

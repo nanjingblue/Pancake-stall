@@ -101,11 +101,11 @@ void GoBuyVip::onBtnOkClicked()
     }
     bool echo = Global::database->addVip(Global::username, this->grade);
     if(echo == true) {
-//        qDebug() << QString("Vip 设置完毕，当前等级为：%1").arg(this->grade);
+        qDebug() << QString("Vip 设置完毕，当前等级为：%1").arg(this->grade);
         QMessageBox::information(this, "BuyVip", "感谢你，尊贵的会员大人");
     } else {
-//        qDebug() << "Vip 购买失败";
-        QMessageBox::information(this, "BuyVip", "会员购买失败，请重新尝试");
+        qDebug() << "Vip 购买失败";
+        QMessageBox::information(this, "BuyVip", "会员充值失败，请重新尝试");
     }
     // 设置全局变量
     Global::grade = this->grade;
@@ -113,9 +113,9 @@ void GoBuyVip::onBtnOkClicked()
     // 加入销售记录表
     echo = Global::database->addVipSold(Global::username, this->grade, this->vipCost);
     if(echo) {
-        qDebug() << "购买Vip记录添加成功";
+        qDebug() << "充值Vip记录添加成功";
     } else {
-        qDebug() << "购买Vip记录添加失败";
+        qDebug() << "充值Vip记录添加失败";
     }
 }
 

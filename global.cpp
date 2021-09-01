@@ -36,6 +36,8 @@ int Global::grade =0;
 // 配料
 float Global::QriginalCake = 3.00;
 float Global::Sauce = 0;
+float Global::bossSauce = 0.50;
+float Global::bossCilantro = 0.50;
 float Global::Cilantro = 0;
 float Global::Egg = 1.00;
 float Global::Crispbread = 1.00;

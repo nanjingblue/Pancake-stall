@@ -21,7 +21,7 @@ BossSoldDetails::~BossSoldDetails()
 void BossSoldDetails::initTableSlodDetails()
 {
     this->model->setQuery("SELECT USERNAME,VIPGRADE,CAKEPRICE,VIPPRICE,SOLDDATE FROM SOLDINFO");
-    model->setHeaderData(0,Qt::Horizontal,tr("UserName"));
+    model->setHeaderData(0,Qt::Horizontal,tr("用户名"));
     model->setHeaderData(1, Qt::Horizontal, tr("会员等级"));
     model->setHeaderData(2, Qt::Horizontal, tr("煎饼费用"));
     model->setHeaderData(3, Qt::Horizontal, tr("会员费用"));

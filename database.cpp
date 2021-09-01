@@ -38,6 +38,7 @@ void Database::initUserInfoTable()
         qDebug() << "userinfo table fail";
     }
     this->addUser("admin", "123456");
+    qDebug() << "Add admin auc";
 }
 
 void Database::initSoldInfoTable()
@@ -78,7 +79,7 @@ void Database::initCommentInfoTable()
             )";
     QSqlQuery query;
     if(query.exec(cmd)) {
-        qDebug() << "CommrntInfoTable suc";
+        qDebug() << "CommentInfoTable suc";
     } else {
         qDebug() << "CommentInfoTable fail";
     }
@@ -116,7 +117,7 @@ int Database::addUser(QString username, QString password)
     model->setFilter(QString("username='%1'").arg(username));
     model->select();
     if (model->rowCount() > 0) {
-        qDebug() << "用户已经存在";
+        qDebug() << "用户已存在";
         return 1;
     } else {
         QSqlQuery query;

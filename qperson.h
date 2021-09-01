@@ -24,6 +24,7 @@ public:
      double materialCosts = 0;
      double sales = 0;
      double profits = 0;
+     goods * value;
 };
 
 #endif // QPERSON_H

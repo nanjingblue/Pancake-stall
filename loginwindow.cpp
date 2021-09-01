@@ -49,7 +49,7 @@ void LoginWindow::on_btnLoginer_clicked()
     } else {
         if(Global::database->isUserExist(username, password)) {
             this->message->setText("Logining");
-            // 设置当前用户 使用全局变量
+            // 设置当前用户到 Global
             Global::username = username;
             Global::password = password;
             if(username == "admin") {

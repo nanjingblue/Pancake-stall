@@ -44,5 +44,5 @@ void ShowComment::initTableShowComment()
 
 void ShowComment::onBtnCloseClicked()
 {
-    exit(1);
+    exit(0);
 }
