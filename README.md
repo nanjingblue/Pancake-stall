@@ -6,7 +6,7 @@
 
 配置好 `Qt`环境后，使用 `QtCreator` 打开项目文件夹`PancakeStall`下的：`PancakeStall.pro`文件
 
-![image-20210901151026506](C:\Users\cherry\AppData\Roaming\Typora\typora-user-images\image-20210901151026506.png)
+![image-20210901151026506](https://gitee.com/nanjingblue/typora-table/raw/master/image-20210901151026506.png)
 
 选择配置环境：
 
@@ -15,8 +15,6 @@
 点击运行：
 
 ![image-20210901151200524](https://gitee.com/nanjingblue/typora-table/raw/master/image-20210901151200524.png)
-
-![image-20210901151240323](C:\Users\cherry\AppData\Roaming\Typora\typora-user-images\image-20210901151240323.png)
 
 ## 特别注意
 
